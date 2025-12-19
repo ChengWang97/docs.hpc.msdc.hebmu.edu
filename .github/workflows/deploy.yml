@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Sphinx and theme
         run: |
-          pip install sphinx sphinx-rtd-theme
+          pip install sphinx sphinx-immaterial myst-parser sphinx-copybutton
 
       - name: Build HTML documentation
         run: |
