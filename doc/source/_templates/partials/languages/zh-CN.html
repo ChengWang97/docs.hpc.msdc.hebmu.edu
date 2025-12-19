@@ -1,0 +1,56 @@
+{# Sphinx-Immaterial 中文语言模板：partials/languages/zh-CN.html #}
+{# 用于界面元素的中文本地化，适配主题的按钮、提示、导航等组件 #}
+
+{# 1. 搜索相关文本 #}
+{% macro search__button_text() %}搜索{% endmacro %}
+{% macro search__placeholder() %}搜索文档...{% endmacro %}
+{% macro search__no_results() %}未找到匹配结果{% endmacro %}
+{% macro search__results_count(count) %}
+  {%- if count == 1 -%}找到 1 个匹配结果{%- else -%}找到 {{ count }} 个匹配结果{%- endif -%}
+{% endmacro %}
+{% macro search__results_heading() %}搜索结果{% endmacro %}
+{% macro search__highlighted_hit() %}匹配{% endmacro %}
+
+{# 2. 导航与目录相关文本 #}
+{% macro nav__toggle() %}切换导航{% endmacro %}
+{% macro nav__toc() %}目录{% endmacro %}
+{% macro nav__menu() %}菜单{% endmacro %}
+{% macro nav__close() %}关闭{% endmacro %}
+{% macro globaltoc__link() %}全局目录{% endmacro %}
+{% macro localtoc__link() %}页面目录{% endmacro %}
+{% macro breadcrumbs__home() %}首页{% endmacro %}
+
+{# 3. 版本与模式切换相关文本 #}
+{% macro version__menu() %}版本{% endmacro %}
+{% macro version__unstyled() %}未指定版本{% endmacro %}
+{% macro mode__light() %}浅色模式{% endmacro %}
+{% macro mode__dark() %}深色模式{% endmacro %}
+{% macro mode__auto() %}自动模式（跟随系统）{% endmacro %}
+
+{# 4. 文档信息相关文本 #}
+{% macro source__link() %}查看源码{% endmacro %}
+{% macro source__edit() %}编辑此页{% endmacro %}
+{% macro last_updated__label() %}最后更新：{% endmacro %}
+{% macro copyright__label() %}版权所有{% endmacro %}
+
+{# 5. 分页与扩展相关文本 #}
+{% macro prev_next__prev() %}上一页{% endmacro %}
+{% macro prev_next__next() %}下一页{% endmacro %}
+{% macro tabs__list_label() %}内容选项卡{% endmacro %}
+{% macro admonition__note() %}说明{% endmacro %}
+{% macro admonition__tip() %}提示{% endmacro %}
+{% macro admonition__warning() %}警告{% endmacro %}
+{% macro admonition__danger() %}危险{% endmacro %}
+{% macro admonition__important() %}重要{% endmacro %}
+
+{# 6. 代码块相关文本 #}
+{% macro code__copy() %}复制代码{% endmacro %}
+{% macro code__copied() %}已复制！{% endmacro %}
+{% macro code__select_all() %}全选{% endmacro %}
+{% macro code__language() %}语言：{% endmacro %}
+
+{# 7. 其他通用文本 #}
+{% macro skip_link() %}跳转到主要内容{% endmacro %}
+{% macro back_to_top() %}返回顶部{% endmacro %}
+{% macro hidden__label() %}隐藏内容{% endmacro %}
+{% macro show__label() %}显示内容{% endmacro %}
