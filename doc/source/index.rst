@@ -17,7 +17,7 @@
 
    resourcebuild
    about
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: 平台手册:
@@ -45,4 +45,5 @@
 
 
 
+.. Trigger CI build - do not remove
 .. Trigger CI build - do not remove
