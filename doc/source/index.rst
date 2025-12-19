@@ -16,7 +16,8 @@
    :caption: 快速上手:
 
    resourcebuild
-
+   about
+   
 .. toctree::
    :maxdepth: 2
    :caption: 平台手册:
@@ -33,7 +34,7 @@
    :caption: 应用:
 
 
-about
+
 
 索引和目录
 ================
