@@ -26,7 +26,8 @@ jobs:
                 sphinx-copybutton \
                 sphinx-design \
                 sphinx-prompt \
-                sphinx-notfound-page
+                sphinx-notfound-page\
+                sphinx-substitution-extensions
 
       - name: Build HTML documentation
         run: |
