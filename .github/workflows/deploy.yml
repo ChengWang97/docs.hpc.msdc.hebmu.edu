@@ -1,28 +1,35 @@
-name: Deploy Docs
+name: Build Sphinx Docs and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]  # 当推送到 main 分支时触发
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '18'
+          python-version: '3.10'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Sphinx and theme
+        run: |
+          pip install sphinx sphinx-rtd-theme
 
-      - name: Build
-        run: npm run build
+      - name: Build HTML documentation
+        run: |
+          make -C doc html
+        env:
+          SPHINXOPTS: "-W"  # 可选：将警告视为错误，提高文档质量
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./doc/build/html
+          enable_jekyll: false  # 防止 GitHub 干扰 _static, _modules 等文件夹
