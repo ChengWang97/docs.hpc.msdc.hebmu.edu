@@ -17,9 +17,16 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Sphinx and theme
+      - name: Install dependencies
         run: |
-          pip install sphinx sphinx-immaterial myst-parser sphinx-copybutton
+           pip install \
+                sphinx \
+                sphinx-immaterial \
+                myst-parser \
+                sphinx-copybutton \
+                sphinx-design \
+                sphinx-prompt \
+                sphinx-notfound-page
 
       - name: Build HTML documentation
         run: |
