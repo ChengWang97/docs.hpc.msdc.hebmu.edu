@@ -19,25 +19,30 @@ jobs:
 
       - name: Install dependencies
         run: |
-           pip install \
-                sphinx \
-                sphinx-immaterial \
-                myst-parser \
-                sphinx-copybutton \
-                sphinx-design \
-                sphinx-prompt \
-                sphinx-notfound-page\
-                sphinx-substitution-extensions
+          pip install \
+            sphinx \
+            sphinx-immaterial \
+            myst-parser \
+            sphinx-copybutton \
+            sphinx-design \
+            sphinx-prompt \
+            sphinx-notfound-page \
+            sphinx-substitution-extensions
 
       - name: Build HTML documentation
         run: |
           make -C doc html
         env:
-          SPHINXOPTS: "-W"  # 可选：将警告视为错误，提高文档质量
+          SPHINXOPTS: "-W"  # 将警告视为错误，提升文档质量
+
+      - name: Create .nojekyll file
+        run: |
+          touch ./doc/build/html/.nojekyll
+        # 告诉 GitHub Pages 不要用 Jekyll 处理我们的静态文件
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACCESS_TOKEN }}  # ⚠️ 必须用自定义 PAT！
           publish_dir: ./doc/build/html
-          enable_jekyll: true  # 防止 GitHub 干扰 _static, _modules 等文件夹
+          # enable_jekyll: true  ← 删除这一行或设为 false
