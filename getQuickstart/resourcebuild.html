@@ -40,7 +40,7 @@
     
         <link rel="stylesheet" type="text/css" href="../_static/sphinx_immaterial_theme.cf2c65c97ee1b6f01.min.css?v=0a68cab4" />
         <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-        <link rel="stylesheet" type="text/css" href="../_static/css/medium-zoom.css?v=129959e1" />
+        <link rel="stylesheet" type="text/css" href="../_static/css/lightbox.css?v=8d5ccc8a" />
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -447,43 +447,44 @@
 
 <h1 id="id1">申请资源<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
 <p>点击页面上方的“申请资源”，进入资源库。</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../_images/resourcebuild_1.png"><img alt="资源库入口页面" src="../_images/resourcebuild_1.png" style="width: 90%;" />
-</a>
-</figure>
 <p>可根据应用分类、基本属性、应用名称的检索方式检索对应所需的计算资源</p>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_2.png" src="../_images/resourcebuild_2.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_2.png"><img alt="创建实例页面" class="zoomable" src="../_images/resourcebuild_2.png" style="width: 100%;" />
+</a>
 </figure>
 <p>可以根据需要选择自己所需的计算资源。此处以PyTorch为例，输入PyTorch的关键字，回车可检索出对应的计算资源，点击计算资源右下角的蓝色按钮-“创建实例”。</p>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_3.png" src="../_images/resourcebuild_3.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_3.png"><img alt="实例设置页面" class="zoomable" src="../_images/resourcebuild_3.png" style="width: 100%;" />
+</a>
 </figure>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_4.png" src="../_images/resourcebuild_4.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_4.png"><img alt="实例启动页面" class="zoomable" src="../_images/resourcebuild_4.png" style="width: 100%;" />
+</a>
 </figure>
 <p>在实例设置中填写资源需求信息。</p>
 <p>●       名称: 为该实例名称，用于分辨同一用户创建的不同实例。</p>
 <p>●       通知邮箱: 用于发送平台通知，例如使用最长到时间即将到期时，将发送邮件通知用户。</p>
 <p>●       计费账户: 用于扣费的账户。可以选择从个人账户扣费，也可以选择从自己所属的项目账户扣费，具体请参考计费方法。</p>
 <p>●       节点资源设置: 用于设置实例的节点资源。根据实例的不同，可选的资源也不同。</p>
-<div class="note admonition">
-<p class="admonition-title">备注</p>
+<div class="admonition">
+<p class="admonition-title">⚠️提示</p>
 <p><strong>CPU</strong> 是指实例要使用的 CPU 核数。</p>
 <p><strong>GPU</strong> 是指实例要使用的 GPU 卡数。如果卡数为 0.Xx 的小数点，意为共享 GPU。例如 0.2 卡，则系统会分配给实例 1/5 的 GPU 卡。</p>
 <p><strong>内存</strong> 是指实例需要的内存数。</p>
 </div>
 <p>在“我的资源”中选择申请的实例，启动该实例。</p>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_5.png" src="../_images/resourcebuild_5.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_5.png"><img alt="实例启动页面" class="zoomable" src="../_images/resourcebuild_5.png" style="width: 100%;" />
+</a>
 </figure>
-<div class="note admonition">
-<p class="admonition-title">备注</p>
+<div class="admonition">
+<p class="admonition-title">⚠️提示</p>
 <p>如果平台当前可用资源已经全部分配完毕，该实例申请后需要排队等待分配，此时无法启动实例。</p>
 </div>
 <p>实例使用结束后，请先停止实例，然后按下图“释放资源”，以免资源闲置，同时避免继续计费。</p>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_6.png" src="../_images/resourcebuild_6.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_6.png"><img alt="实例释放页面" class="zoomable" src="../_images/resourcebuild_6.png" style="width: 100%;" />
+</a>
 </figure>
 <div class="warning admonition">
 <p class="admonition-title">警告</p>
@@ -491,7 +492,8 @@
 </div>
 <p>释放后的实例可以从回收站内恢复，重新再启动使用。</p>
 <figure class="align-default">
-<img alt="../_images/resourcebuild_7.png" src="../_images/resourcebuild_7.png" />
+<a class="zoomable reference internal image-reference" href="../_images/resourcebuild_7.png"><img alt="实例回收站恢复页面" class="zoomable" src="../_images/resourcebuild_7.png" style="width: 100%;" />
+</a>
 </figure>
 
 
@@ -558,8 +560,7 @@
         <script src="../_static/sphinx_immaterial_theme.32136f45f91ae6956.min.js?v=a7a9472a"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script src="../_static/js/medium-zoom.bundle.js?v=2edaa6ca"></script>
-        <script src="../_static/js/medium-zoom-init.js?v=2857b9ce"></script>
+        <script src="../_static/js/lightbox.js?v=1c4b3947"></script>
     
   </body>
 </html>

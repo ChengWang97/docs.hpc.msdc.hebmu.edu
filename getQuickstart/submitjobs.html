@@ -40,7 +40,7 @@
     
         <link rel="stylesheet" type="text/css" href="../_static/sphinx_immaterial_theme.cf2c65c97ee1b6f01.min.css?v=0a68cab4" />
         <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-        <link rel="stylesheet" type="text/css" href="../_static/css/medium-zoom.css?v=129959e1" />
+        <link rel="stylesheet" type="text/css" href="../_static/css/lightbox.css?v=8d5ccc8a" />
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -512,37 +512,45 @@
 <h1 id="submit-job">submit-job<a class="headerlink" href="#submit-job" title="Link to this heading">¶</a></h1>
 <h2 id="id1">提交集群作业<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <p>通过页面提交集群作业</p>
-<div class="note admonition">
-<p class="admonition-title">备注</p>
+<blockquote>
+<div><div class="admonition">
+<p class="admonition-title">⚠️提示</p>
 <p>在提交作业前，请先到“集群”-“分区”页面查看集群的不同队列资源情况。如果有不止一个队列，请根据队列的资源配置情况，在作业脚本中加上队列参数 --partition=&lt;names&gt; 。</p>
 </div>
+</div></blockquote>
 <p>点击上方集群，选择“提交作业”。</p>
-<figure class="align-default">
+<figure class="align-default" id="id2">
 <a class="zoomable reference internal image-reference" href="../_images/submitjob_1.png"><img alt="提交作业入口页面" class="zoomable" src="../_images/submitjob_1.png" style="width: 90%;" />
 </a>
+<figcaption>
+<p><span class="caption-text"><span class="caption-text">
+图1：提交作业入口页面说明。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></figcaption>
 </figure>
 <p>选择需要使用的集群和作业模板，填写作业名称，在脚本编辑器里填入作业脚本，点击右上方的“提交作业”按钮。</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../_images/submitjob_2.png"><img alt="提交作业页面" src="../_images/submitjob_2.png" style="width: 90%;" />
+<figure class="align-default" id="id3">
+<a class="zoomable reference internal image-reference" href="../_images/submitjob_2.png"><img alt="提交作业页面" class="zoomable" src="../_images/submitjob_2.png" style="width: 90%;" />
 </a>
+<figcaption>
+<p><span class="caption-text"><span class="caption-text">
+图2：提交作业页面</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></figcaption>
 </figure>
 <p>提交作业后，可以在“作业”页面查看是否提交成功。</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../_images/submitjob_3.png"><img alt="作业请求页面" src="../_images/submitjob_3.png" style="width: 90%;" />
+<a class="zoomable reference internal image-reference" href="../_images/submitjob_3.png"><img alt="作业请求页面" class="zoomable" src="../_images/submitjob_3.png" style="width: 90%;" />
 </a>
 </figure>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../_images/submitjob_4.png"><img alt="作业详情页面" src="../_images/submitjob_4.png" style="width: 90%;" />
+<a class="zoomable reference internal image-reference" href="../_images/submitjob_4.png"><img alt="作业详情页面" class="zoomable" src="../_images/submitjob_4.png" style="width: 90%;" />
 </a>
 </figure>
 <p>如果提交的作业有输出，需要下载，等待作业运行完成后，点击作业名称，进入作业详情。</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../_images/submitjob_5.png"><img alt="作业详情页面" src="../_images/submitjob_5.png" style="width: 90%;" />
+<a class="zoomable reference internal image-reference" href="../_images/submitjob_5.png"><img alt="作业详情页面" class="zoomable" src="../_images/submitjob_5.png" style="width: 90%;" />
 </a>
 </figure>
 <p>在“作业输出”页面，点击“下载输出日志”。</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="../_images/submitjob_6.png"><img alt="作业日志输出页面" src="../_images/submitjob_6.png" style="width: 90%;" />
+<a class="zoomable reference internal image-reference" href="../_images/submitjob_6.png"><img alt="作业日志输出页面" class="zoomable" src="../_images/submitjob_6.png" style="width: 90%;" />
 </a>
 </figure>
 
@@ -610,8 +618,7 @@
         <script src="../_static/sphinx_immaterial_theme.32136f45f91ae6956.min.js?v=a7a9472a"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script src="../_static/js/medium-zoom.bundle.js?v=2edaa6ca"></script>
-        <script src="../_static/js/medium-zoom-init.js?v=2857b9ce"></script>
+        <script src="../_static/js/lightbox.js?v=1c4b3947"></script>
     
   </body>
 </html>
