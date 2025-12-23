@@ -36,7 +36,7 @@ html_search_language = 'zh'
 html_logo = 'logo.png'
 #html_theme = 'alabaster'
 html_theme = 'sphinx_immaterial'
-#html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'  # Read the Docs 主题，兼容性好
 html_theme_options = {
     # Set the repo location to get a badge with stats
     'repo_url': 'https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn',
@@ -86,10 +86,31 @@ html_theme_options = {
 
 html_static_path = ['_static']
 
-# 添加自定义 JavaScript 和 CSS
+# 启用自定义 JavaScript 设置图片预览无法退出问题
 html_js_files = [
-    'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
-    'custom.js'
+    'js/medium-zoom.bundle.js',    # 先加载库
+    'js/medium-zoom-init.js',      # 再运行初始化
 ]
-html_css_files = ['custom.css']
+
+html_css_files = [
+    'css/medium-zoom.css',
+]
+
+# 补充上述内容，无法进行ESC退出图片预览，确保 DOCUMENTATION_OPTIONS 被注入到页面中
+html_context = {
+    "DOCUMENTATION_OPTIONS": {
+        "url_root": "",
+        "version": "",
+        "language": "zh",
+        "has_source": False,
+    }
+}
+
+html_js_files = [
+    'js/medium-zoom.bundle.js',
+    'js/medium-zoom-init.js',
+]
+
+html_css_files = [
+    'css/medium-zoom.css',
+]
