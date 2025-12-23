@@ -106,11 +106,10 @@ html_context = {
     }
 }
 
-html_js_files = [
-    'js/medium-zoom.bundle.js',
-    'js/medium-zoom-init.js',
+html_css_files = [
+    'css/lightbox.css',
 ]
 
-html_css_files = [
-    'css/medium-zoom.css',
+html_js_files = [
+    'js/lightbox.js',
 ]
