@@ -15,7 +15,10 @@
    :maxdepth: 2
    :caption: 快速上手:
 
-   resourcebuild
+   申请资源<getQuickstart/resourcebuild>
+   提交集群作业<getQuickstart/submitjobs>
+   工作台<getQuickstart/dashboard>
+   资源池<getQuickstart/pool>
    about
 
 .. toctree::
