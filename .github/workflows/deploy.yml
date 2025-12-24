@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: '3.10'
 
+          
+
       - name: Install dependencies
         run: |
           pip install \
@@ -43,6 +45,15 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}  # ⚠️ 必须用自定义 PAT！
+          github_token: ${{ secrets.ACCESS_TOKEN }}  # ✅ 使用自定义 token
           publish_dir: ./doc/build/html
-          # enable_jekyll: true  ← 删除这一行或设为 false
+          publish_branch: gh-pages
+          commit_message: "🚀 Auto-deploy from GitHub Actions"
+
+#      - name: Deploy to GitHub Pages
+ #       uses: peaceiris/actions-gh-pages@v3
+ #       with:
+ #         github_token: ${{ secrets.ACCESS_TOKEN }}  # ⚠️ 必须用自定义 PAT！
+ #         publish_dir: ./doc/build/html
+ #         # enable_jekyll: true  ← 删除这一行或设为 false
+
