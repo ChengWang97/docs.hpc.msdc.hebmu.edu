@@ -29,7 +29,10 @@ jobs:
             sphinx-design \
             sphinx-prompt \
             sphinx-notfound-page \
-            sphinx-substitution-extensions
+            sphinx-substitution-extensions \
+            sphinx-tabs           # ✅ 新增依赖
+
+#          pip install -r requirements.txt 
 
       - name: Build HTML documentation
         run: |
@@ -50,7 +53,7 @@ jobs:
           publish_branch: gh-pages
           commit_message: "🚀 Auto-deploy from GitHub Actions"
 
-#      - name: Deploy to GitHub Pages
+ #      - name: Deploy to GitHub Pages
  #       uses: peaceiris/actions-gh-pages@v3
  #       with:
  #         github_token: ${{ secrets.ACCESS_TOKEN }}  # ⚠️ 必须用自定义 PAT！
