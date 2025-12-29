@@ -1,0 +1,68 @@
+/* ========== 全局 sphinx-tabs 基础样式（可选，通用兜底） ========== */
+.sphinx-tabs {
+    margin: 1rem 0;
+    border: none;
+}
+
+.sphinx-tabs-tab {
+    background-color: transparent;
+    color: var(--md-default-fg-color--secondary);
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+    background-color: transparent;
+    color: var(--md-primary-fg-color);
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    font-weight: 600;
+}
+
+.sphinx-tabs-tab:hover {
+    color: var(--md-primary-fg-color--light);
+    background-color: var(--md-default-bg-color--light);
+}
+
+.sphinx-tabs-panel {
+    padding: 1rem;
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0 0 8px 8px;
+    margin-top: -1px;
+}
+
+/* ========== 段落内局部 Tab 样式（local-tab 类，核心新增） ========== */
+/* 1. 局部 Tab 容器：适配段落内显示，缩小边距 */
+.local-tab.sphinx-tabs {
+    margin: 0.5rem 0 1rem 0;  /* 比全局 Tab 更小的上下边距，贴合段落 */
+    max-width: 100%;          /* 不超出段落宽度 */
+}
+
+/* 2. 局部 Tab 标题栏：更小的内边距，适配段落 */
+.local-tab .sphinx-tabs-tab {
+    padding: 0.4rem 0.8rem;   /* 内边距缩小，不占过多空间 */
+    font-size: 0.9rem;        /* 字体稍小，更贴合段落文字大小 */
+}
+
+/* 3. 局部 Tab 内容区域：优化圆角和边距，更精致 */
+.local-tab .sphinx-tabs-panel {
+    padding: 0.8rem 1rem;     /* 内容内边距缩小 */
+    border-radius: 6px;       /* 小圆角，替代全局的下圆角，更精致 */
+    margin-top: 0.5rem;       /* 与 Tab 栏分开一点，避免粘连 */
+    border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* 4. 局部 Tab 选中/悬浮状态：继承主题色，仅微调 */
+.local-tab .sphinx-tabs-tab[aria-selected="true"] {
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    font-weight: 500;         /* 选中时加粗程度降低，更柔和 */
+}
+
+.local-tab .sphinx-tabs-tab:hover {
+    background-color: var(--md-default-bg-color--light);
+    color: var(--md-primary-fg-color--light);
+}

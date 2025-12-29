@@ -23,6 +23,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinx.ext.autosectionlabel',
     'sphinx_substitution_extensions',
+    'sphinx_tabs.tabs',
 ]
 
 templates_path = ['_templates']
@@ -86,15 +87,15 @@ html_theme_options = {
 
 html_static_path = ['_static']
 
-# 启用自定义 JavaScript 设置图片预览无法退出问题
-html_js_files = [
-    'js/medium-zoom.bundle.js',    # 先加载库
-    'js/medium-zoom-init.js',      # 再运行初始化
-]
 
-html_css_files = [
-    'css/medium-zoom.css',
-]
+
+# 启用自定义 JavaScript 设置图片预览无法退出问题
+#html_js_files = [
+#    'js/medium-zoom.bundle.js',    # 先加载库
+#    'js/medium-zoom-init.js',      # 再运行初始化
+# ]
+
+
 
 # 补充上述内容，无法进行ESC退出图片预览，确保 DOCUMENTATION_OPTIONS 被注入到页面中
 html_context = {
@@ -107,9 +108,48 @@ html_context = {
 }
 
 html_css_files = [
+    'css/medium-zoom.css',
     'css/lightbox.css',
+    'css/custom.css',
+    "css/custom_tab_styles.css",
 ]
 
 html_js_files = [
     'js/lightbox.js',
+    'js/external-links.js',
 ]
+
+
+#.rst文件中字体显示格式配置
+rst_prolog = """
+.. role:: b
+   :class: bold-only
+
+.. role:: wb
+   :class: big bold blue
+
+.. role:: warn
+   :class: big bold red
+
+.. role:: tip
+   :class: larger bold green
+
+.. role:: note
+   :class: bold orange
+
+.. role:: small-gray
+   :class: small gray
+
+.. role:: black
+   :class: big bold black
+
+.. role:: zcblack
+   :class: bold black
+
+.. role:: zcred
+   :class: bold red
+    
+.. role:: cmd
+    :class: font-blue
+
+"""
