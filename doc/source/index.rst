@@ -45,6 +45,8 @@
       腾讯会议录制 ↗
    </a></p>
 
+      也可通过抖音搜索"hpc.cloud"观看相关视频教程。
+
 **科研数据中心算力资源扩容申请及成果登记**
 
 
@@ -66,7 +68,7 @@
 
 
 **用户注册及登录**
-  0. :doc:`02-platformmanual/userManual`
+  1. :doc:`02-platformmanual/userManual`
 
 .. toctree::
    :maxdepth: 2
