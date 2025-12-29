@@ -1,0 +1,90 @@
+/* ===== 通用样式工具类 ===== */
+
+/* 字体大小 */
+.big     { font-size: 1.3em; }
+.larger  { font-size: 1.5em; }
+.small   { font-size: 0.9em; }
+
+/* 是否加粗 */
+.bold    { font-weight: bold; }
+.normal-weight { font-weight: normal; }
+
+/* 颜色系统 */
+.blue    { color: #007BFF; }
+.red     { color: #DC3545; }
+.green   { color: #28A745; }
+.orange  { color: #FD7E14; }
+.purple  { color: #6F42C1; }
+.pink    { color: #E83E8C; }
+.teal    { color: #20C997; }
+.gray    { color: #6c757d; }
+.black   { color: #000000; }
+
+/* 可组合使用：例如 .big.blue.bold */
+
+
+/* 蓝色分割线 */
+.divider-blue {
+    border: 0;
+    height: 1px;
+    background-color: #007BFF; /* 和 .blue 一致 */
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+.divider-gray {
+    border: 0;
+    height: 1px;
+    background-color: #6c757d; /* 和 .gray 一致 */
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+.divider-black {
+    border: 0;
+    height: 1px;
+    background-color: #000000; /* 和 .black 一致 */
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+.command-style {
+    font-weight: bold;
+    color: #007BFF;
+    background-color: #f8f9fa;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+}
+
+
+/*字体颜色和背景颜色设置 */
+
+/*浅蓝色背景，亮蓝色字体*/
+.font-blue {
+    background-color: #99cdf2 !important;
+    color: #1c84b4 !important;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    font-weight: normal !important;
+}
+
+
+
+/* 自动为外部链接添加图标和新窗口提示 */
+.rst-content a[href^="http"] {
+    /* 可选：加个外链图标 */
+    text-decoration: none;
+    position: relative;
+}
+.rst-content a[href^="http"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #666;
+    vertical-align: super;
+}
+
+
+/*仅加粗文本*/
+.bold-only {
+    font-weight: bold !important;
+}
