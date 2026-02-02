@@ -4,121 +4,123 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = '河北医科大学高性能平台用户帮助手册'
 copyright = '2025, ChengWang'
 author = 'ChengWang'
 #release = 'v0.1'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-#sphinx_immaterial v0.13.8
- 
-
+# sphinx_immaterial v0.13.8
 extensions = [
     'sphinx_immaterial',
     'sphinx-prompt',
-    'sphinx_copybutton',
+    'sphinx_copybutton',  # 重新启用（低版本主题靠此实现复制按钮）
     'sphinx.ext.autosectionlabel',
     'sphinx_substitution_extensions',
     'sphinx_tabs.tabs',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-
 language = 'zh'
 html_search_language = 'zh'
+
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_logo = 'logo.png'
-#html_theme = 'alabaster'
 html_theme = 'sphinx_immaterial'
-#html_theme = 'sphinx_rtd_theme'  # Read the Docs 主题，兼容性好
+
 html_theme_options = {
     # Set the repo location to get a badge with stats
-    'repo_url': 'https://github.com/SJTU-HPC/docs.hpc.sjtu.edu.cn',
+    'repo_url': 'https://chengwang97.github.io/docs.hpc.msdc.hebmu.edu/',
     'repo_name': 'hebmu HPC Docs',
     "analytics": {
-                    "provider": "google",
-                    "property": "G-VGHWLGCC9B"
-                 },
-    # 添加下载配置
-   # "nav_links": [
-   #     {
-   #         "href": "https://example.com/help_manual.pdf",  # 替换为实际PDF链接
-   #        "internal": False,
-   #         "title": "📥 下载完整手册",
-   #     },
-   #     {
-   #        "href": "https://example.com/resourcebuild.pdf",  # 替换为实际PDF链接
-   #         "internal": False, 
-   #        "title": "📥 资源申请指南",
-   #     },
-   # ],
-    #↓控制全局目录是否默认折叠。True 表示默认折叠（仅显示一级标题，点击可展开子标题）；False 表示默认全部展开。
+        "provider": "google",
+        "property": "G-VGHWLGCC9B"
+    },
+    # 移除低版本不支持的配置（消除警告）
+    # "code_copy_button": True,  # v0.13.8 不支持，已删除
+    # "code_copy_button_only_text": True,  # v0.13.8 不支持，已删除
+    
+    # 保留原有配置
+    # "nav_links": [
+    #     {
+    #         "href": "https://example.com/help_manual.pdf",
+    #        "internal": False,
+    #         "title": "📥 下载完整手册",
+    #     },
+    #     {
+    #        "href": "https://example.com/resourcebuild.pdf",
+    #         "internal": False, 
+    #        "title": "📥 资源申请指南",
+    #     },
+    # ],
     'globaltoc_collapse': True,
-    #是否在目录中包含 “隐藏的文档”。True 表示即使标记为隐藏，仍会在目录中显示（通常用于需要隐藏但仍需导航的文档）
     'globaltoc_includehidden': True,
-    # Do not download google fonts
-    # See "Extension error" https://github.com/jbms/sphinx-immaterial/issues/216
     "font": False,
 
     # Light and dark mode
-    'palette': [{ 'media': '(prefers-color-scheme: light)', # 当系统偏好浅色模式时
-                 'scheme': 'default',                       # 使用默认浅色主题
-                 'toggle': {
-                    'icon': 'material/lightbulb-outline',   # 切换按钮,浅色模式下显示“灯泡轮廓”
-                    'name': 'Switch to dark mode',          # 按钮切换到深色模式
-                 },
-                },
-                { 'media': '(prefers-color-scheme: dark)',   # 当系统偏好深色模式时
-                  'scheme': 'slate',                         # 使用 slate 深色主题
-                  'toggle': {
-                    'icon': 'material/lightbulb',            # 切换按钮,深色模式下显示亮
-                    'name': 'Switch to light mode',          # 切换到浅色模式
-                 },
-                },
-               ]
+    'palette': [{
+        'media': '(prefers-color-scheme: light)',
+        'scheme': 'default',
+        'toggle': {
+            'icon': 'material/lightbulb-outline',
+            'name': 'Switch to dark mode',
+        },
+    },
+    {
+        'media': '(prefers-color-scheme: dark)',
+        'scheme': 'slate',
+        'toggle': {
+            'icon': 'material/lightbulb',
+            'name': 'Switch to light mode',
+        },
+    }],
+
+    #20260106增加处理代码高亮显示等功能
+    "features": [
+        #"navigation.tabs",         # 启用导航标签
+        "content.code.copy",        # 启用代码块复制按钮
+        "content.code.linenums",    # 启用代码块行号
+        "tabbed.content",           # 启用tabbed指令
+    ],
 }
 
 html_static_path = ['_static']
 
-
-
-# 启用自定义 JavaScript 设置图片预览无法退出问题
+# 启用自定义 JavaScript 设置图片预览无法退出问题（注释保留）
 #html_js_files = [
-#    'js/medium-zoom.bundle.js',    # 先加载库
-#    'js/medium-zoom-init.js',      # 再运行初始化
+#    'js/medium-zoom.bundle.js',
+#    'js/medium-zoom-init.js',
 # ]
 
-
-
-# 补充上述内容，无法进行ESC退出图片预览，确保 DOCUMENTATION_OPTIONS 被注入到页面中
+# 合并 html_context 配置（避免重复定义）
 html_context = {
     "DOCUMENTATION_OPTIONS": {
         "url_root": "",
         "version": "",
         "language": "zh",
         "has_source": False,
-    }
+    },
+    # 本地测试 + 服务器部署,doc线上下载链接切换
+    'root_url': '',  # 本地测试用空字符串，部署时改为 '/' 或实际站点路径
 }
 
 html_css_files = [
     'css/medium-zoom.css',
     'css/lightbox.css',
     'css/custom.css',
-    "css/custom_tab_styles.css",
+    'css/custom_tab.css',
+    'css/custom_code_style.css',  # 代码块样式文件
 ]
 
 html_js_files = [
     'js/lightbox.js',
     'js/external-links.js',
+    'js/custom_copy.js',
 ]
-
 
 #.rst文件中字体显示格式配置
 rst_prolog = """
@@ -143,6 +145,9 @@ rst_prolog = """
 .. role:: black
    :class: big bold black
 
+.. role:: gray
+   :class: middle bold gray
+
 .. role:: zcblack
    :class: bold black
 
@@ -151,5 +156,23 @@ rst_prolog = """
     
 .. role:: cmd
     :class: font-blue
-
 """
+
+# --- sphinx-copybutton  设置 全局配置代码块 ---
+# 启用行号（全局）
+highlight_options = {'linenos': True}
+
+# 默认语言（不影响实际高亮）
+highlight_language = 'text'
+pygments_style = 'sphinx' # 代码高亮风格
+
+# sphinx-copybutton 设置
+copybutton_prompt_text = r"\$ "
+copybutton_prompt_is_regexp = True
+copybutton_remove_prompts = True        # 可选：复制时不带 $
+copybutton_line_continuation_character = "\\"
+
+#20260106 add 
+pygments_style = "material"  # 适配 sphinx_immaterial 的高亮样式
+pygments_dark_style = "material-dark"  # 深色模式下的高亮样式
+

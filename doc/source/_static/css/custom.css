@@ -4,6 +4,7 @@
 .big     { font-size: 1.3em; }
 .larger  { font-size: 1.5em; }
 .small   { font-size: 0.9em; }
+.middle  { font-size: 1.1em; }
 
 /* 是否加粗 */
 .bold    { font-weight: bold; }
@@ -87,4 +88,58 @@
 /*仅加粗文本*/
 .bold-only {
     font-weight: bold !important;
+}
+
+
+/*20260107 edit 增加页面tab属性*/
+
+/* Tab容器 */
+.tab-container {
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgb(255, 255, 255);
+    overflow: hidden;
+    background: #ffffff; 
+}
+
+/* Tab标签栏 */
+.tab-labels {
+    display: flex;
+    background: #ffffff;
+    border-bottom: 1px solid #000000;
+}
+
+/* Tab标签 */
+.tab-label {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #000000;
+    font-weight: 500;
+    border: none;
+    background: none;
+    transition: background 0.2s;
+}
+
+/* 激活的Tab标签 */
+.tab-label.active {
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 4px solid #000000;
+}
+
+/* Tab内容隐藏 */
+.tab-content {
+    display: none;
+    padding: 16px;
+    color: #000000;
+}
+
+/* 激活的Tab内容显示 */
+.tab-content.active {
+    display: block;
+}
+
+/* 适配代码块样式 */
+.tab-content .highlight {
+    margin: 0.5em 0 !important;
 }

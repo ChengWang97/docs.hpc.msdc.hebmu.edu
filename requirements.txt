@@ -22,3 +22,4 @@ sphinxcontrib.htmlhelp
 jieba
 sphinx-prompt
 pydantic
+sphinx-tabs
