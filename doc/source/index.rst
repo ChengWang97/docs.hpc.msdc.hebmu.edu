@@ -142,6 +142,8 @@
    :caption: 常见问题:
    :hidden:
 
+   moe<05-faq/moe>
+
 .. 
    常见问题解答<05-faq/faq>
 
