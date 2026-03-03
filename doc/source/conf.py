@@ -145,6 +145,9 @@ rst_prolog = """
 .. role:: black
    :class: big bold black
 
+.. role:: mblack
+   :class: middle bold black 
+   
 .. role:: gray
    :class: middle bold gray
 

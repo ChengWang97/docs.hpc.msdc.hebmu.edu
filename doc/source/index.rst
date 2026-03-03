@@ -84,6 +84,25 @@
    链接跳转网站后搜索框输入问题即可
    </p>
 
+**2026年初最新培训视频**
+
+.. raw:: html
+
+   <p>最新培训视频：
+   <a href="http://10.20.7.1/home/account"
+      target="_blank"
+      rel="noopener noreferrer">
+      高性能平台登录跳转入口 ↗
+   </a>
+   登录零信任访问高性能平台查看相关视频教程，如下图示例：
+   </p>
+
+.. figure:: ./_static/img/index/index_1.png
+   :align: center
+   :alt: 最新培训视频
+   :width: 100%
+   :class: zoomable
+
 .. .. figure:: ./_static/img/index/index_1.png
    :align: center
    :alt: 文件检索
