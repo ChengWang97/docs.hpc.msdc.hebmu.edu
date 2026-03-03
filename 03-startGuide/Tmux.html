@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#id1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -745,6 +750,19 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    <span>Tmux</span>
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="#" class="md-nav__link md-nav__link--active">
         
   
@@ -756,6 +774,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id1" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="应用介绍 (引用标签)"><span>应用介绍</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="使用指南 (引用标签)"><span>使用指南</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -923,6 +979,34 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id1" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="应用介绍 (引用标签)"><span>应用介绍</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="使用指南 (引用标签)"><span>使用指南</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -938,6 +1022,86 @@
 
 
 <h1 id="tmux">tmux<a class="headerlink" href="#tmux" title="Link to this heading">¶</a></h1>
+<p><span class="big bold blue">Tmux</span></p>
+<hr class="divider_blue"><h2 id="id1">应用介绍<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<hr class="divider_black"><p>Terminal Multiplexer（终端复用器，简称为 Tmux）是一款开源的服务程序，旨在提供多窗口远程控制功能。它的主要目的是为用户解决网络异常中断或需要同时控制多个远程终端窗口的问题。通过Tmux，用户可以在多个远程会话之间自由切换，并且可以保证即使网络中断，也能够随时恢复会话，确保用户不会失去对远程会话的控制。</p>
+<h2 id="id2">使用指南<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>:small-gray::<cite>管理远程会话</cite></p>
+<p>1.在终端中输入 :cmd::<cite>tmux</cite> 命令进入会话窗口：</p>
+<figure class="align-default">
+<a class="zoomable reference internal image-reference" href="../_images/tmux_1.png"><img alt="进入会话窗口" class="zoomable" src="../_images/tmux_1.png" style="width: 100%;" />
+</a>
+</figure>
+<p>2.在会话窗口中输入 :cmd::<cite>exit</cite> 命令以退出会话窗口：</p>
+<figure class="align-default">
+<a class="zoomable reference internal image-reference" href="../_images/tmux_2.png"><img alt="退出会话窗口" class="zoomable" src="../_images/tmux_2.png" style="width: 100%;" />
+</a>
+</figure>
+<p>3.会话窗口的编号默认从0开始自动排序（即0、1、2、3、……），可以创建一个指定名称为</p>
+<p>backup 的会话窗口。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux new -s backup
+</code></pre></div></td></tr></table></div>
+</div>
+<p>4.将当前会话隐藏到后台。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux detach
+</code></pre></div></td></tr></table></div>
+</div>
+<p>5.此时也可以关闭此会话窗口（这与进行远程连接时突然断网具有相同的效果），Tmux</p>
+<p>服务程序会 自动帮我们进行保存。 查看后台有多少会话：</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux ls
+</code></pre></div></td></tr></table></div>
+</div>
+<p>6.回到刚才创建的 backup 会话中。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux attach -t backup
+</code></pre></div></td></tr></table></div>
+</div>
+<p>7.重命名已创建的会话。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux rename-session -t &lt;old-name&gt; &lt;new-name&gt;
+例如把会话名称 test1 的会话 重命名为 bench
+tmux rename-session -t test1 bench
+</code></pre></div></td></tr></table></div>
+</div>
+<figure class="align-default">
+<a class="zoomable reference internal image-reference" href="../_images/tmux_3.png"><img alt="重命名会话窗口" class="zoomable" src="../_images/tmux_3.png" style="width: 100%;" />
+</a>
+</figure>
+<p>8.删掉 tmux 中的特定窗口。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux kill-window -t :窗口编号
+</code></pre></div></td></tr></table></div>
+</div>
+<p>例如，要删除窗口编号为2的窗口，可以执行 tmux kill-window -t :2</p>
+<p>9.终止整个 tmux 服务器，同时结束所有的 tmux 会话窗口。</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux kill-server
+</code></pre></div></td></tr></table></div>
+</div>
+<p>:small-gray::<cite>管理多窗格</cite></p>
+<hr class="divider_gray"><p>Tmux服务具有多窗格功能，能够将一个终端界面按照上下或左右进行切割，从而使得能同时做多件事情，而且之间互不打扰。</p>
+<div class="admonition">
+<p class="admonition-title">注意：</p>
+<p>以下命令必须要进入到tmux窗口界面才能执行成功。</p>
+</div>
+<p>可以使用以下命令上下分割：</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux split-window
+</code></pre></div></td></tr></table></div>
+</div>
+<figure class="align-default">
+<a class="zoomable reference internal image-reference" href="../_images/tmux_4.png"><img alt="上下分割" class="zoomable" src="../_images/tmux_4.png" style="width: 100%;" />
+</a>
+</figure>
+<p>退出多窗格功能使用 <span class="font-blue">exit</span></p>
+<p>可以使用以下命令左右分割：</p>
+<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>tmux split-window -h
+</code></pre></div></td></tr></table></div>
+</div>
+<figure class="align-default">
+<img alt="左右分割 :width: 100% :class: zoomable" src="../_images/tmux_5.png" />
+</figure>
+<p>..退出多窗格功能使用 <span class="font-blue">exit</span></p>
+<p><span class="middle bold black">常见问题</span></p>
+<hr class="divider_black"><p><span class="middle bold black">参考链接</span></p>
+<hr class="divider_black">
 
 
 

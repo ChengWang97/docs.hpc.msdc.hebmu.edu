@@ -44,7 +44,7 @@
        width: 80%;
    }
 
-   /* 预定义的 font-blue 样式（和你 conf.py 中配置的对应） */
+   /* 预定义的 font-blue 样式（和 conf.py 中配置的对应） */
    .font-blue {
        background-color: #e6f7ff !important;  
        color: #0355a1ff !important;             
