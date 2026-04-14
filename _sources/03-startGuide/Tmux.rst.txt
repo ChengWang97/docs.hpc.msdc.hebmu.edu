@@ -8,8 +8,8 @@ tmux
 
     <hr class="divider_blue">
 
-应用介绍
-========
+Tmux应用介绍
+==============
 
 .. raw:: html 
 
