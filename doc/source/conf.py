@@ -20,6 +20,9 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosectionlabel',
+
 ]
 
 templates_path = ['_templates']
@@ -159,7 +162,16 @@ rst_prolog = """
     
 .. role:: cmd
     :class: font-blue
+
+.. |cpu| image:: /_static/img/06-app/indeximg/cpu-icon.png
+.. |gpu| image:: /_static/img/06-app/indeximg/gpu-icon.png
+.. |arm| image:: /_static/img/06-app/indeximg/arm-icon.png
+.. |sig| image:: /_static/img/06-app/indeximg/singularity-icon.png
+.. |studio| image:: /_static/img/06-app/indeximg/studio-icon.png
+
 """
+#20260106rst_prolog增加图片替换配置
+
 
 # --- sphinx-copybutton  设置 全局配置代码块 ---
 # 启用行号（全局）
@@ -178,4 +190,9 @@ copybutton_line_continuation_character = "\\"
 #20260106 add 
 pygments_style = "material"  # 适配 sphinx_immaterial 的高亮样式
 pygments_dark_style = "material-dark"  # 深色模式下的高亮样式
+
+#260424 消除重复标签提示
+#autosectionlabel_prefix_document = True
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 3
 

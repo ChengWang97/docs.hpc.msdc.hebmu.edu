@@ -143,3 +143,9 @@
 .tab-content .highlight {
     margin: 0.5em 0 !important;
 }
+
+/* 让第一个 toctree 项显示为标题样式（可选） */
+.toc-tree .toctree-l1:first-child > a {
+  font-weight: bold;
+  color: #2980b9;
+}
