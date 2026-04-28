@@ -1,0 +1,3023 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="calculix.html">
+      
+      
+        <link rel="next" href="casm.html">
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>Cantera - 河北医科大学高性能平台用户帮助手册  文档</title>
+      
+    
+    
+      
+        
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.cf2c65c97ee1b6f01.min.css?v=0a68cab4" />
+        <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/medium-zoom.css" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/lightbox.css?v=8d5ccc8a" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=40a8ad98" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom_tab.css?v=6245d250" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom_code_style.css?v=569779d5" />
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-VGHWLGCC9B"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-VGHWLGCC9B",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-VGHWLGCC9B",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#id2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../index.html" title="河北医科大学高性能平台用户帮助手册  文档" class="md-header__button md-logo" aria-label="河北医科大学高性能平台用户帮助手册  文档" data-md-component="logo">
+      <img src="../../_static/logo.png" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            河北医科大学高性能平台用户帮助手册  文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cantera
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://chengwang97.github.io/docs.hpc.msdc.hebmu.edu/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hebmu HPC Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="河北医科大学高性能平台用户帮助手册  文档" class="md-nav__button md-logo" aria-label="河北医科大学高性能平台用户帮助手册  文档" data-md-component="logo">
+      <img src="../../_static/logo.png" alt="logo">
+    </a>
+    河北医科大学高性能平台用户帮助手册  文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://chengwang97.github.io/docs.hpc.msdc.hebmu.edu/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hebmu HPC Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>快速上手</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            <span>快速上手</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/resourcebuild.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>申请资源</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/submitjobs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>提交集群作业</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/dashboard.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>工作台</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/pool.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>资源池</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>关于</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>平台手册</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            <span>平台手册</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/userManual.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>用户手册</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/fileTransfer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>文件传输</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/userInstance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>用户实例</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/clusterLogin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>集群登录</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/jobSystem.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>作业系统</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/projectSharing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>项目共享</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/billingStatistics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>计费统计</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>入门指南</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            <span>入门指南</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Linux基本操作</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Conda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Conda</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Spack.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Spack</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Tmux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Tmux</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>应用指南</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            <span>应用指南</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-application/Ubuntu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Ubuntu</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>常见问题:<wbr></span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            <span>常见问题:<wbr></span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-faq/moe.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>moe</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    <span>软件</span>
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            <span>软件</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>软件模块使用方法</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ByqMpi/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>编译器、MPI库、数学库、应用工具</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jzcs/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>基准测试</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>AI 计算</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    <span>智能药物平台</span>
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            <span>智能药物平台</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="abinit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>ABINIT</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="amber.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Amber</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="basilisk.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Basilisk</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="calculix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Calculix</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    <span>Cantera</span>
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Cantera</span>
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:简介 (引用标签)"><span>简介</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:cantera使用说明 (引用标签)"><span>Cantera使用说明</span></span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cantera使用说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id4" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:在思源一号上自行安装并使用cantera (引用标签)"><span>在思源一号上自行安装并使用Cantera</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi2-0cantera" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:在pi2.0上自行安装并使用cantera (引用标签)"><span>在pi2.<wbr>0上自行安装并使用Cantera</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:参考资料 (引用标签)"><span>参考资料</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="casm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CASM</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cesm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CESM</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cp2k.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CP2k</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cplex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>cplex</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gerris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Gerris</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gnuplot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>gnuplot</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gaussian.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>GAUSSIAN</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gromacs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>GROMACS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lammps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>LAMMPS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lammps-rbe.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>LAMMPS-<wbr>RBE</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nektar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Nektar++</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="neper-fepx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Neper-<wbr>FEPX</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nwchem.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>NWChem</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="octave.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Octave</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openRadioss.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Open<wbr>Radioss</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="whiskythc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Whisky<wbr>THC</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openfoam.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Open<wbr>FOAM</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="osiris.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Osiris</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ovito.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>OVITO</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="psi4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>PSI4</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pysph.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Py<wbr>SPH</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studio/paraview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Paraview</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quantum-espresso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Quantum ESPRESSO</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quickpic.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Quick<wbr>PIC</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="siesta.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>SIESTA</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="star-ccm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>STAR-<wbr>CCM+</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sumo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>SUMO</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vasp.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>VASP</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vmd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>VMD</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wrf.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>WRF</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="elphbolt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Elphbolt</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gmx_mmpbsa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>gmx_<wbr>MMPBSA</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmaq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CMAQ</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="thirdorder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>thirdorder</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gift-bte.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Gift-<wbr>BTE</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="damask.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>DAMSK</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="roms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>ROMS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proj.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>PROJ</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gamess.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>GAMESS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deepmd-kit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Dee<wbr>PMD-<wbr>kit</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chroma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CHROMA</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flash.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>FLASH</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="colmap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>colmap</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pymultinest.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>pymultinest</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lorene.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>LORENE</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="boltztrap.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Boltz<wbr>Tra<wbr>P</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="croco.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Croco</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openseespy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Openseespy</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wanniertools.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Wannier<wbr>Tools</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="namd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>NAMD</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xerus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Xerus</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="packmol.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>packmol</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lobster.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>lobster</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="libgd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>libgd <wbr>(GD Library)</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swxxpt/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>生物信息计算</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:简介 (引用标签)"><span>简介</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:cantera使用说明 (引用标签)"><span>Cantera使用说明</span></span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cantera使用说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id4" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:在思源一号上自行安装并使用cantera (引用标签)"><span>在思源一号上自行安装并使用Cantera</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi2-0cantera" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:在pi2.0上自行安装并使用cantera (引用标签)"><span>在pi2.<wbr>0上自行安装并使用Cantera</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/znywpt/cantera:参考资料 (引用标签)"><span>参考资料</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                
+                
+                  
+
+
+<h1 id="cantera"><span id="id1"></span>Cantera<a class="headerlink" href="#cantera" title="Link to this heading">¶</a></h1>
+<h2 id="id2">简介<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>Cantera是一个化学反应动力学开源求解套件，可以处理Chemkin格式的动力学机理、热力学和输运性质文件，通过适当编程即可实现常用反应器(激波管、快速压缩机、搅拌反应器等)的模拟及敏感性分析等功能。</p>
+<h2 id="id3">Cantera使用说明<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<h3 id="id4">在思源一号上自行安装并使用Cantera<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>使用conda创建虚拟环境并安装Cantera：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>srun -p 64c512g -n 1 --pty /bin/bash
+module load miniconda3/4.10.3
+conda create --name cantera_test
+source  activate cantera_test
+conda install -c cantera/label/dev cantera
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>创建一个目录canteratest并进入该目录：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>mkdir canteratest
+cd canteratest
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>在该目录下创建如下测试文件cantera_test.py：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>&quot;&quot;&quot;
+Compute the &quot;equilibrium&quot; and &quot;frozen&quot; sound speeds for a gas
+
+Requires: cantera &gt;= 2.5.0
+Keywords: thermodynamics, equilibrium
+&quot;&quot;&quot;
+
+import cantera as ct
+import math
+
+
+def equilSoundSpeeds(gas, rtol=1.0e-6, max_iter=5000):
+    &quot;&quot;&quot;
+    Returns a tuple containing the equilibrium and frozen sound speeds for a
+    gas with an equilibrium composition.  The gas is first set to an
+    equilibrium state at the temperature and pressure of the gas, since
+    otherwise the equilibrium sound speed is not defined.
+    &quot;&quot;&quot;
+
+    # set the gas to equilibrium at its current T and P
+    gas.equilibrate(&#39;TP&#39;, rtol=rtol, max_iter=max_iter)
+
+    # save properties
+    s0 = gas.s
+    p0 = gas.P
+    r0 = gas.density
+
+    # perturb the pressure
+    p1 = p0*1.0001
+
+    # set the gas to a state with the same entropy and composition but
+    # the perturbed pressure
+    gas.SP = s0, p1
+
+    # frozen sound speed
+    afrozen = math.sqrt((p1 - p0)/(gas.density - r0))
+
+    # now equilibrate the gas holding S and P constant
+    gas.equilibrate(&#39;SP&#39;, rtol=rtol, max_iter=max_iter)
+
+    # equilibrium sound speed
+    aequil = math.sqrt((p1 - p0)/(gas.density - r0))
+
+    # compute the frozen sound speed using the ideal gas expression as a check
+    gamma = gas.cp/gas.cv
+    afrozen2 = math.sqrt(gamma * ct.gas_constant * gas.T /
+                         gas.mean_molecular_weight)
+
+    return aequil, afrozen, afrozen2
+
+
+# test program
+if __name__ == &quot;__main__&quot;:
+    gas = ct.Solution(&#39;gri30.yaml&#39;)
+    gas.X = &#39;CH4:1.00, O2:2.0, N2:7.52&#39;
+    for n in range(27):
+        T = 300.0 + 100.0 * n
+        gas.TP = T, ct.one_atm
+        print(T, equilSoundSpeeds(gas))
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>在该目录下创建如下作业提交脚本canteratest.slurm:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=canteratest
+#SBATCH --partition=64c512g
+#SBATCH --ntasks-per-node=1
+#SBATCH -n 1
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+ulimit -s unlimited
+ulimit -l unlimited
+
+python3 cantera_test.py
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>使用如下命令提交作业：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>sbatch canteratest.slurm
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>作业完成后在.out文件中可看到如下结果：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>300.0 (351.81897215910766, 351.8225040320234, 351.8256504699811)
+400.0 (404.3283414405797, 404.60713567095115, 404.6106870323977)
+500.0 (450.60495699772054, 450.5397010505711, 450.54335869692443)
+600.0 (493.2014592526757, 491.4792382523635, 491.4832797222876)
+700.0 (531.9259905892586, 528.573790448385, 528.5780936855717)
+800.0 (565.8023687396801, 562.6519887313171, 562.6563319848512)
+900.0 (594.787246530831, 594.3886921418637, 594.3928468410445)
+1000.0 (623.1834570351056, 623.1967311658512, 624.387559050875)
+1100.0 (652.9331414338375, 653.0237878409358, 653.0280730486886)
+1200.0 (680.2903244154709, 680.3796031034527, 680.3839821434552)
+1300.0 (706.4795851760939, 706.6231852692649, 706.627654889073)
+1400.0 (731.5765086318436, 731.8946265500344, 731.8991788491217)
+1500.0 (755.5871134959623, 756.3126654597705, 756.3172844867763)
+1600.0 (778.4547221738709, 779.9838934521655, 779.9885516424242)
+1700.0 (800.0747386258183, 803.0113981678297, 803.0160523778995)
+1800.0 (820.3501225230362, 825.5029866841091, 825.5075790369601)
+1900.0 (839.2604068697004, 847.5787433425231, 847.5832049739269)
+2000.0 (856.9424757185266, 869.3775874590473, 869.3818488069585)
+2100.0 (873.7271469549471, 891.0618214354686, 891.0658256580159)
+2200.0 (889.9263467742846, 912.8186991059179, 912.8224139325766)
+2300.0 (906.658936254018, 934.8583105569138, 934.8617342865722)
+2400.0 (923.8715214357717, 957.4080987743781, 957.411256949987)
+2500.0 (942.1089113756211, 980.7060227583402, 980.7089610687678)
+2600.0 (961.7644659835721, 1004.9962598901973, 1004.9990315355183)
+2700.0 (982.983503202847, 1030.5311450749714, 1030.5338048850456)
+2800.0 (1005.8548751928753, 1057.5791215213358, 1057.5817227102573)
+2900.0 (1030.5547401650322, 1086.430611844347, 1086.433204007728)
+</code></pre></div>
+</div>
+<h3 id="pi2-0cantera">在pi2.0上自行安装并使用Cantera<a class="headerlink" href="#pi2-0cantera" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>使用conda创建虚拟环境并安装Cantera：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>srun -p small -n 1 --pty /bin/bash
+module load miniconda3/4.8.2
+conda create --name cantera_test
+source  activate cantera_test
+conda install -c cantera/label/dev cantera
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>此步骤和上文完全相同；</p></li>
+<li><p>此步骤和上文完全相同；</p></li>
+<li><p>在该目录下创建如下作业提交脚本canteratest.slurm:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=canteratest
+#SBATCH --partition=small
+#SBATCH --ntasks-per-node=1
+#SBATCH -n 1
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+ulimit -s unlimited
+ulimit -l unlimited
+
+python3 cantera_test.py
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>使用如下命令提交作业：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>sbatch canteratest.slurm
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>作业完成后在.out文件中可看到如下结果：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>300.0 (351.81897215910766, 351.8225040320234, 351.8256504699811)
+400.0 (404.3283414405797, 404.60713567095115, 404.6106870323977)
+500.0 (450.60495699772054, 450.5397010505711, 450.54335869692443)
+600.0 (493.2014592526757, 491.4792382523635, 491.4832797222876)
+700.0 (531.9259905892586, 528.573790448385, 528.5780936855717)
+800.0 (565.8023687396801, 562.6519887313171, 562.6563319848512)
+900.0 (594.787246530831, 594.3886921418637, 594.3928468410445)
+1000.0 (623.1834570351056, 623.1967311658512, 624.387559050875)
+1100.0 (652.9331414338375, 653.0237878409358, 653.0280730486886)
+1200.0 (680.2903244154709, 680.3796031034527, 680.3839821434552)
+1300.0 (706.4795851760939, 706.6231852692649, 706.627654889073)
+1400.0 (731.5765086318436, 731.8946265500344, 731.8991788491217)
+1500.0 (755.5871134959623, 756.3126654597705, 756.3172844867763)
+1600.0 (778.4547221738709, 779.9838934521655, 779.9885516424242)
+1700.0 (800.0747386258183, 803.0113981678297, 803.0160523778995)
+1800.0 (820.3501225230362, 825.5029866841091, 825.5075790369601)
+1900.0 (839.2604068697004, 847.5787433425231, 847.5832049739269)
+2000.0 (856.9424757185266, 869.3775874590473, 869.3818488069585)
+2100.0 (873.7271469549471, 891.0618214354686, 891.0658256580159)
+2200.0 (889.9263467742846, 912.8186991059179, 912.8224139325766)
+2300.0 (906.658936254018, 934.8583105569138, 934.8617342865722)
+2400.0 (923.8715214357717, 957.4080987743781, 957.411256949987)
+2500.0 (942.1089113756211, 980.7060227583402, 980.7089610687678)
+2600.0 (961.7644659835721, 1004.9962598901973, 1004.9990315355183)
+2700.0 (982.983503202847, 1030.5311450749714, 1030.5338048850456)
+2800.0 (1005.8548751928753, 1057.5791215213358, 1057.5817227102573)
+2900.0 (1030.5547401650322, 1086.430611844347, 1086.433204007728)
+</code></pre></div>
+</div>
+<h2 id="id5">参考资料<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cantera.org/">Cantera 官网</a></p></li>
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/546180253">安装 Cantera 知乎</a></p></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2025, ChengWang.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    8.1.3.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.linenums", "tabbed.content"], "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+      
+        <script src="../../_static/sphinx_immaterial_theme.32136f45f91ae6956.min.js?v=a7a9472a"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=b8bcef97"></script>
+        <script src="../../_static/js/lightbox.js?v=1c4b3947"></script>
+        <script src="../../_static/js/external-links.js?v=fb425843"></script>
+        <script src="../../_static/js/custom_copy.js?v=32293fb7"></script>
+    
+  </body>
+</html>

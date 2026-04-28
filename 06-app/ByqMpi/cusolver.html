@@ -1,0 +1,2655 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="cusparse.html">
+      
+      
+        <link rel="next" href="cufft.html">
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>cuSOLVER - 河北医科大学高性能平台用户帮助手册  文档</title>
+      
+    
+    
+      
+        
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.cf2c65c97ee1b6f01.min.css?v=0a68cab4" />
+        <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/medium-zoom.css" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/lightbox.css?v=8d5ccc8a" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=40a8ad98" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom_tab.css?v=6245d250" />
+        <link rel="stylesheet" type="text/css" href="../../_static/css/custom_code_style.css?v=569779d5" />
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-VGHWLGCC9B"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-VGHWLGCC9B",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-VGHWLGCC9B",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#id2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../index.html" title="河北医科大学高性能平台用户帮助手册  文档" class="md-header__button md-logo" aria-label="河北医科大学高性能平台用户帮助手册  文档" data-md-component="logo">
+      <img src="../../_static/logo.png" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            河北医科大学高性能平台用户帮助手册  文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              cuSOLVER
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://chengwang97.github.io/docs.hpc.msdc.hebmu.edu/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hebmu HPC Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="河北医科大学高性能平台用户帮助手册  文档" class="md-nav__button md-logo" aria-label="河北医科大学高性能平台用户帮助手册  文档" data-md-component="logo">
+      <img src="../../_static/logo.png" alt="logo">
+    </a>
+    河北医科大学高性能平台用户帮助手册  文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://chengwang97.github.io/docs.hpc.msdc.hebmu.edu/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hebmu HPC Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>快速上手</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            <span>快速上手</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/resourcebuild.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>申请资源</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/submitjobs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>提交集群作业</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/dashboard.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>工作台</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-getQuickstart/pool.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>资源池</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>关于</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>平台手册</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            <span>平台手册</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/userManual.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>用户手册</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/fileTransfer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>文件传输</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/userInstance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>用户实例</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/clusterLogin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>集群登录</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/jobSystem.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>作业系统</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/projectSharing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>项目共享</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-platformmanual/billingStatistics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>计费统计</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>入门指南</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            <span>入门指南</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Linux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Linux基本操作</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Conda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Conda</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Spack.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Spack</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-startGuide/Tmux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Tmux</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>应用指南</span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            <span>应用指南</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-application/Ubuntu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Ubuntu</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    <span>常见问题:<wbr></span>
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            <span>常见问题:<wbr></span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-faq/moe.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>moe</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    <span>软件</span>
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            <span>软件</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>软件模块使用方法</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    <span>编译器、MPI库、数学库、应用工具</span>
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            <span>编译器、MPI库、数学库、应用工具</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gnu.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>GNU Compiler Collection</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="armadillo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Armadillo</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Intel Compiler</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intel_mkl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Intel mkl</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intel_mpi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Intel-<wbr>MPI</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intel_vtune.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Intel-<wbr>Vtune</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cublas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>cu<wbr>BLAS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cuda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CUDA</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cusparse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>cu<wbr>SPARSE</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    <span>cu<wbr>SOLVER</span>
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>cu<wbr>SOLVER</span>
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:简介 (引用标签)"><span>简介</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:cusolver使用说明 (引用标签)"><span>cu<wbr>SOLVER使用说明</span></span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="cuSOLVER使用说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id4" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:思源一号上的cusolver (引用标签)"><span>思源一号上的cu<wbr>SOLVER</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi2-0cusolver" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:pi2.0上的cusolver (引用标签)"><span>pi2.<wbr>0上的cu<wbr>SOLVER</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:参考资料 (引用标签)"><span>参考资料</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cufft.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>cu<wbr>FFT</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="open_mpi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Open<wbr>MPI</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mpi4py.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Mpi4py</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="numba.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Numba</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cupy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Cupy</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pycuda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Py<wbr>CUDA</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openblas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Open<wbr>BLAS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eigen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Eigen</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fftw.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>FFTW</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gsl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>GSL</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hpcsdk.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>NVIDIA HPC SDK</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hypre.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Hypre</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hyper-mpi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Hyper-<wbr>MPI</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bisheng.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>bisheng</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jdk.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>JDK</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Conda</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Python</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="perl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>PERL</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="r.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>R</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmake.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>CMake</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matlab.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>MATLAB</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../studio/jupyter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Jupyter</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="glibc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>glibc</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spooles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>SPOOLES</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dealii.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Deal.<wbr>II</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nvitop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>nvitop</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="latex.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Te<wbr>X Live</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jobtop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Job<wbr>Top 作业监控工具</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jzcs/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>基准测试</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>AI 计算</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../znywpt/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>智能药物平台</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swxxpt/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>生物信息计算</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#id2" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:简介 (引用标签)"><span>简介</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id3" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:cusolver使用说明 (引用标签)"><span>cu<wbr>SOLVER使用说明</span></span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="cuSOLVER使用说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id4" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:思源一号上的cusolver (引用标签)"><span>思源一号上的cu<wbr>SOLVER</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi2-0cusolver" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:pi2.0上的cusolver (引用标签)"><span>pi2.<wbr>0上的cu<wbr>SOLVER</span></span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="06-app/byqmpi/cusolver:参考资料 (引用标签)"><span>参考资料</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                
+                
+                  
+
+
+<h1 id="cusolver"><span id="id1"></span>cuSOLVER<a class="headerlink" href="#cusolver" title="Link to this heading">¶</a></h1>
+<h2 id="id2">简介<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>The NVIDIA cuSOLVER library provides a collection of dense and sparse direct linear solvers and Eigen solvers which deliver significant acceleration for Computer Vision, CFD, Computational Chemistry, and Linear Optimization applications. The cuSOLVER library is included in both the NVIDIA HPC SDK and the CUDA Toolkit.</p>
+<h2 id="id3">cuSOLVER使用说明<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<h3 id="id4">思源一号上的cuSOLVER<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>先创建一个目录cuSOLVERtest并进入该目录：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>mkdir cuSOLVERtest
+cd cuSOLVERtest
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>在该目录下创建如下测试文件cuSOLVERtest.cu：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>//利用LU分解法求解线性方程组Ax=b
+
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;vector&gt;
+
+#include &lt;cuda_runtime.h&gt;
+#include &lt;cusolverDn.h&gt;
+
+template &lt;typename T&gt;
+void print_matrix(const int &amp;m, const int &amp;n, const T *A, const int &amp;lda);
+
+template &lt;&gt;
+void print_matrix(const int &amp;m, const int &amp;n, const float *A, const int &amp;lda)
+{
+    for (int i = 0; i &lt; m; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            std::printf(&quot;%0.2f &quot;, A[j * lda + i]);
+        }
+        std::printf(&quot;\n&quot;);
+    }
+}
+
+template &lt;&gt;
+void print_matrix(const int &amp;m, const int &amp;n, const double *A, const int &amp;lda)
+{
+    for (int i = 0; i &lt; m; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            std::printf(&quot;%0.2f &quot;, A[j * lda + i]);
+        }
+        std::printf(&quot;\n&quot;);
+    }
+}
+
+template &lt;&gt;
+void print_matrix(const int &amp;m, const int &amp;n, const cuComplex *A, const int &amp;lda)
+{
+    for (int i = 0; i &lt; m; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            std::printf(&quot;%0.2f + %0.2fj &quot;, A[j * lda + i].x, A[j * lda + i].y);
+        }
+        std::printf(&quot;\n&quot;);
+    }
+}
+
+template &lt;&gt;
+void print_matrix(const int &amp;m, const int &amp;n, const cuDoubleComplex *A, const int &amp;lda)
+{
+    for (int i = 0; i &lt; m; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            std::printf(&quot;%0.2f + %0.2fj &quot;, A[j * lda + i].x, A[j * lda + i].y);
+        }
+        std::printf(&quot;\n&quot;);
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    cusolverDnHandle_t cusolverH = NULL;
+    cudaStream_t stream = NULL;
+
+    const int m = 3;
+    const int lda = m;
+    const int ldb = m;
+
+    /*
+     *       | 1 2 3  |
+     *   A = | 4 5 6  |
+     *       | 7 8 10 |
+     *
+     * without pivoting: A = L*U
+     *       | 1 0 0 |      | 1  2  3 |
+     *   L = | 4 1 0 |, U = | 0 -3 -6 |
+     *       | 7 2 1 |      | 0  0  1 |
+     *
+     * with pivoting: P*A = L*U
+     *       | 0 0 1 |
+     *   P = | 1 0 0 |
+     *       | 0 1 0 |
+     *
+     *       | 1       0     0 |      | 7  8       10     |
+     *   L = | 0.1429  1     0 |, U = | 0  0.8571  1.5714 |
+     *       | 0.5714  0.5   1 |      | 0  0       -0.5   |
+     */
+
+    const std::vector&lt;double&gt; A = {1.0, 4.0, 7.0, 2.0, 5.0, 8.0, 3.0, 6.0, 10.0};
+    const std::vector&lt;double&gt; B = {1.0, 2.0, 3.0};
+    std::vector&lt;double&gt; X(m, 0);
+    std::vector&lt;double&gt; LU(lda * m, 0);
+    std::vector&lt;int&gt; Ipiv(m, 0);
+    int info = 0;
+
+    double *d_A = nullptr; /* device copy of A */
+    double *d_B = nullptr; /* device copy of B */
+    int *d_Ipiv = nullptr; /* pivoting sequence */
+    int *d_info = nullptr; /* error info */
+
+    int lwork = 0;            /* size of workspace */
+    double *d_work = nullptr; /* device workspace for getrf */
+
+    const int pivot_on = 0;
+
+    if (pivot_on)
+    {
+        printf(&quot;pivot is on : compute P*A = L*U \n&quot;);
+    }
+    else
+    {
+        printf(&quot;pivot is off: compute A = L*U (not numerically stable)\n&quot;);
+    }
+
+    printf(&quot;A = (matlab base-1)\n&quot;);
+    print_matrix(m, m, A.data(), lda);
+    printf(&quot;=====\n&quot;);
+
+    printf(&quot;B = (matlab base-1)\n&quot;);
+    print_matrix(m, 1, B.data(), ldb);
+    printf(&quot;=====\n&quot;);
+
+    /* step 1: create cusolver handle, bind a stream */
+    (cusolverDnCreate(&amp;cusolverH));
+
+    (cudaStreamCreateWithFlags(&amp;stream, cudaStreamNonBlocking));
+    (cusolverDnSetStream(cusolverH, stream));
+
+    /* step 2: copy A to device */
+    (cudaMalloc(reinterpret_cast&lt;void **&gt;(&amp;d_A), sizeof(double) * A.size()));
+    (cudaMalloc(reinterpret_cast&lt;void **&gt;(&amp;d_B), sizeof(double) * B.size()));
+    (cudaMalloc(reinterpret_cast&lt;void **&gt;(&amp;d_Ipiv), sizeof(int) * Ipiv.size()));
+    (cudaMalloc(reinterpret_cast&lt;void **&gt;(&amp;d_info), sizeof(int)));
+
+    (cudaMemcpyAsync(d_A, A.data(), sizeof(double) * A.size(), cudaMemcpyHostToDevice, stream));
+    (cudaMemcpyAsync(d_B, B.data(), sizeof(double) * B.size(), cudaMemcpyHostToDevice, stream));
+
+    /* step 3: query working space of getrf */
+    (cusolverDnDgetrf_bufferSize(cusolverH, m, m, d_A, lda, &amp;lwork));
+
+    (cudaMalloc(reinterpret_cast&lt;void **&gt;(&amp;d_work), sizeof(double) * lwork));
+
+    /* step 4: LU factorization */
+    if (pivot_on)
+    {
+        (cusolverDnDgetrf(cusolverH, m, m, d_A, lda, d_work, d_Ipiv, d_info));
+    }
+    else
+    {
+        (cusolverDnDgetrf(cusolverH, m, m, d_A, lda, d_work, NULL, d_info));
+    }
+
+    if (pivot_on)
+    {
+        (cudaMemcpyAsync(Ipiv.data(), d_Ipiv, sizeof(int) * Ipiv.size(), cudaMemcpyDeviceToHost, stream));
+    }
+    (cudaMemcpyAsync(LU.data(), d_A, sizeof(double) * A.size(), cudaMemcpyDeviceToHost, stream));
+    (cudaMemcpyAsync(&amp;info, d_info, sizeof(int), cudaMemcpyDeviceToHost, stream));
+
+    (cudaStreamSynchronize(stream));
+
+    if (0 &gt; info)
+    {
+        printf(&quot;%d-th parameter is wrong \n&quot;, -info);
+        exit(1);
+    }
+    if (pivot_on)
+    {
+        printf(&quot;pivoting sequence, matlab base-1\n&quot;);
+        for (int j = 0; j &lt; m; j++)
+        {
+            printf(&quot;Ipiv(%d) = %d\n&quot;, j + 1, Ipiv[j]);
+        }
+    }
+    printf(&quot;L and U = (matlab base-1)\n&quot;);
+    print_matrix(m, m, LU.data(), lda);
+    printf(&quot;=====\n&quot;);
+
+    /*
+     * step 5: solve A*X = B
+     *       | 1 |       | -0.3333 |
+     *   B = | 2 |,  X = |  0.6667 |
+     *       | 3 |       |  0      |
+     *
+     */
+    if (pivot_on)
+    {
+        (cusolverDnDgetrs(cusolverH, CUBLAS_OP_N, m, 1, d_A, lda, d_Ipiv, d_B, ldb, d_info));
+    }
+    else
+    {
+        (cusolverDnDgetrs(cusolverH, CUBLAS_OP_N, m, 1, d_A, lda, NULL, d_B, ldb, d_info));
+    }
+
+    (cudaMemcpyAsync(X.data(), d_B, sizeof(double) * X.size(), cudaMemcpyDeviceToHost, stream));
+    (cudaStreamSynchronize(stream));
+
+    printf(&quot;X = (matlab base-1)\n&quot;);
+    print_matrix(m, 1, X.data(), ldb);
+    printf(&quot;=====\n&quot;);
+
+    /* free resources */
+    (cudaFree(d_A));
+    (cudaFree(d_B));
+    (cudaFree(d_Ipiv));
+    (cudaFree(d_info));
+    (cudaFree(d_work));
+
+    (cusolverDnDestroy(cusolverH));
+
+    (cudaStreamDestroy(stream));
+
+    (cudaDeviceReset());
+
+    return EXIT_SUCCESS;
+}
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>在该目录下创建如下作业提交脚本cuSOLVERtest.slurm:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=cuSOLVERtest        # 作业名
+#SBATCH --partition=a100             # a100 队列
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1            # 1:1 的 GPU:CPU 配比
+#SBATCH --gres=gpu:1                 # 1 块 GPU
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+module load cuda/11.5.0
+module load gcc/11.2.0
+
+nvcc cuSOLVERtest.cu -o cuSOLVERtest -lcusolver
+./cuSOLVERtest
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>使用如下命令提交作业：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>sbatch cuSOLVERtest.slurm
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>作业完成后在.out文件中可看到如下结果：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>pivot is off: compute A = L*U (not numerically stable)
+A = (matlab base-1)
+1.00 2.00 3.00
+4.00 5.00 6.00
+7.00 8.00 10.00
+=====
+B = (matlab base-1)
+1.00
+2.00
+3.00
+=====
+L and U = (matlab base-1)
+1.00 2.00 3.00
+4.00 -3.00 -6.00
+7.00 2.00 1.00
+=====
+X = (matlab base-1)
+-0.33
+0.67
+0.00
+=====
+</code></pre></div>
+</div>
+<h3 id="pi2-0cusolver">pi2.0上的cuSOLVER<a class="headerlink" href="#pi2-0cusolver" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>此步骤和上文完全相同；</p></li>
+<li><p>此步骤和上文完全相同；</p></li>
+<li><p>在该目录下创建如下作业提交脚本cuSOLVERtest.slurm:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=cuSOLVERStest        # 作业名
+#SBATCH --partition=dgx2             # dgx2 队列
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1            # 1:1 的 GPU:CPU 配比
+#SBATCH --gres=gpu:1                 # 1 块 GPU
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+module load cuda/11.6.2-gcc-8.3.0
+module load gcc/8.3.0
+
+nvcc cuSOLVERtest.cu -o cuSOLVERtest -lcusolver
+./cuSOLVERtest
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>使用如下命令提交作业：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>sbatch cuSOLVERtest.slurm
+</code></pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>作业完成后在.out文件中可看到如下结果：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>pivot is off: compute A = L*U (not numerically stable)
+A = (matlab base-1)
+1.00 2.00 3.00
+4.00 5.00 6.00
+7.00 8.00 10.00
+=====
+B = (matlab base-1)
+1.00
+2.00
+3.00
+=====
+L and U = (matlab base-1)
+1.00 2.00 3.00
+4.00 -3.00 -6.00
+7.00 2.00 1.00
+=====
+X = (matlab base-1)
+-0.33
+0.67
+0.00
+=====
+</code></pre></div>
+</div>
+<h2 id="id5">参考资料<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.nvidia.com/cuda/cusolver/index.html">cuSOLVER 官网</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NVIDIA/CUDALibrarySamples/tree/master/cuSOLVER">cuSOLVER github</a></p></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2025, ChengWang.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    8.1.3.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.linenums", "tabbed.content"], "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+      
+        <script src="../../_static/sphinx_immaterial_theme.32136f45f91ae6956.min.js?v=a7a9472a"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=b8bcef97"></script>
+        <script src="../../_static/js/lightbox.js?v=1c4b3947"></script>
+        <script src="../../_static/js/external-links.js?v=fb425843"></script>
+        <script src="../../_static/js/custom_copy.js?v=32293fb7"></script>
+    
+  </body>
+</html>

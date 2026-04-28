@@ -167,6 +167,42 @@
    常见问题解答<05-faq/faq>
 
 
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   软件 <06-app/index>
+   
+.. 
+   软件模块使用方法<06-app/module>    
+
+   编译器、MPI库、数学库、应用工具<06-app/ByqMpi/index>   
+
+   基准测试<06-app/jzcs/index>        
+
+   AI计算<06-app/ai/index>            
+
+   智能药物平台<06-app/znywpt/index>   
+
+   生物信息平台<06-app/swxxpt/index>   
+
+
+.. 
+   软件模块使用方法<06-app/module>    
+   .. ↑module
+   编译器、MPI库、数学库、应用工具<06-app/ByqMpi/index>   
+   .. ↑compilers_and_languages
+   基准测试<06-app/jzcs/index>        
+   .. ↑benchtools
+   AI计算<06-app/ai/index>            
+   .. ↑ai
+   智能药物平台<06-app/znywpt/index>   
+   .. ↑engineeringscience
+   生物信息平台<06-app/swxxpt/index>   
+   .. ↑bioinformatics
+
 ..
    索引和目录
    ================
