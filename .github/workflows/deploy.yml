@@ -24,13 +24,10 @@ jobs:
           pip install \
             sphinx \
             sphinx-immaterial \
-            myst-parser \
             sphinx-copybutton \
-            sphinx-design \
             sphinx-prompt \
-            sphinx-notfound-page \
             sphinx-substitution-extensions \
-            sphinx-tabs           # ✅ 新增依赖
+            sphinx-tabs
 
 #          pip install -r requirements.txt 
 
