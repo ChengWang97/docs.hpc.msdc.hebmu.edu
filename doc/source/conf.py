@@ -1,3 +1,5 @@
+import os
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -21,8 +23,6 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosectionlabel',
-
 ]
 
 templates_path = ['_templates']
@@ -34,6 +34,7 @@ html_search_language = 'zh'
 # -- Options for HTML output -------------------------------------------------
 html_logo = 'logo.png'
 html_theme = 'sphinx_immaterial'
+# html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
     # Set the repo location to get a badge with stats
@@ -89,6 +90,8 @@ html_theme_options = {
         "content.code.linenums",    # 启用代码块行号
         "tabbed.content",           # 启用tabbed指令
     ],
+    #"use_download_button": True,       # 启用下载按钮
+    #"download_artifacts": ["pdf"],     # 提供 PDF 下载
 }
 
 html_static_path = ['_static']
@@ -99,6 +102,7 @@ html_static_path = ['_static']
 #    'js/medium-zoom-init.js',
 # ]
 
+
 # 合并 html_context 配置（避免重复定义）
 html_context = {
     "DOCUMENTATION_OPTIONS": {
@@ -108,11 +112,11 @@ html_context = {
         "has_source": False,
     },
     # 本地测试 + 服务器部署,doc线上下载链接切换
-    'root_url': '',  # 本地测试用空字符串，部署时改为 '/' 或实际站点路径
+    # 通过环境变量 ROOT_URL 驱动，本地测试留空，CI 部署时注入 '/'
+    'root_url': os.environ.get('ROOT_URL', ''),
 }
 
 html_css_files = [
-    'css/medium-zoom.css',
     'css/lightbox.css',
     'css/custom.css',
     'css/custom_tab.css',
@@ -179,12 +183,12 @@ highlight_options = {'linenos': True}
 
 # 默认语言（不影响实际高亮）
 highlight_language = 'text'
-pygments_style = 'sphinx' # 代码高亮风格
 
 # sphinx-copybutton 设置
-copybutton_prompt_text = r"\$ "
+# 匹配 $、#、(venv) $ 等常见 Shell 提示符，复制时自动去除
+copybutton_prompt_text = r"[$#] |^\(.*\)\s*[$#] "
 copybutton_prompt_is_regexp = True
-copybutton_remove_prompts = True        # 可选：复制时不带 $
+copybutton_remove_prompts = True        # 可选：复制时不带提示符
 copybutton_line_continuation_character = "\\"
 
 #20260106 add 

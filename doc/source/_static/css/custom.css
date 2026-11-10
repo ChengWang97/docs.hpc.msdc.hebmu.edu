@@ -24,8 +24,8 @@
 /* 可组合使用：例如 .big.blue.bold */
 
 
-/* 蓝色分割线 */
-.divider-blue {
+/* 分割线 —— 类名使用下划线，与 rst 文件中的 <hr class="divider_xxx"> 保持一致 */
+.divider_blue {
     border: 0;
     height: 1px;
     background-color: #007BFF; /* 和 .blue 一致 */
@@ -33,7 +33,7 @@
     opacity: 0.8;
 }
 
-.divider-gray {
+.divider_gray {
     border: 0;
     height: 1px;
     background-color: #6c757d; /* 和 .gray 一致 */
@@ -41,7 +41,7 @@
     opacity: 0.8;
 }
 
-.divider-black {
+.divider_black {
     border: 0;
     height: 1px;
     background-color: #000000; /* 和 .black 一致 */
@@ -70,14 +70,13 @@
 }
 
 
-
 /* 自动为外部链接添加图标和新窗口提示 */
-.rst-content a[href^="http"] {
-    /* 可选：加个外链图标 */
+/* sphinx_immaterial 主题内容区类名为 md-content（非 rst-content） */
+.md-content a[href^="http"] {
     text-decoration: none;
     position: relative;
 }
-.rst-content a[href^="http"]::after {
+.md-content a[href^="http"]::after {
     content: " ↗";
     font-size: 0.8em;
     color: #666;
@@ -90,59 +89,6 @@
     font-weight: bold !important;
 }
 
-
-/*20260107 edit 增加页面tab属性*/
-
-/* Tab容器 */
-.tab-container {
-    margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgb(255, 255, 255);
-    overflow: hidden;
-    background: #ffffff; 
-}
-
-/* Tab标签栏 */
-.tab-labels {
-    display: flex;
-    background: #ffffff;
-    border-bottom: 1px solid #000000;
-}
-
-/* Tab标签 */
-.tab-label {
-    padding: 8px 16px;
-    cursor: pointer;
-    color: #000000;
-    font-weight: 500;
-    border: none;
-    background: none;
-    transition: background 0.2s;
-}
-
-/* 激活的Tab标签 */
-.tab-label.active {
-    background: #ffffff;
-    color: #000000;
-    border-bottom: 4px solid #000000;
-}
-
-/* Tab内容隐藏 */
-.tab-content {
-    display: none;
-    padding: 16px;
-    color: #000000;
-}
-
-/* 激活的Tab内容显示 */
-.tab-content.active {
-    display: block;
-}
-
-/* 适配代码块样式 */
-.tab-content .highlight {
-    margin: 0.5em 0 !important;
-}
 
 /* 让第一个 toctree 项显示为标题样式（可选） */
 .toc-tree .toctree-l1:first-child > a {

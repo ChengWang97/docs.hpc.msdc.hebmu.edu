@@ -49,22 +49,22 @@
       <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/"
          target="_blank"
          rel="noopener noreferrer">
-         PuTTY ↗，
+         PuTTY，
       </a>
       <a href="https://www.vandyke.com/products/securecrt/"
          target="_blank"
          rel="noopener noreferrer">
-         SecureCRT ↗
+         SecureCRT
       </a> 或
       <a href="https://www.netsarang.com/en/xshell/"
          target="_blank"
          rel="noopener noreferrer">
-         Xshell ↗
+         Xshell
       </a> 或
       <a href="https://www.netsarang.com/en/xmanager/"
          target="_blank"
          rel="noopener noreferrer">
-         Xmanager ↗ 等客户端访问集群的服务端口，Linux/Mac直接使用终端即可。
+         Xmanager 等客户端访问集群的服务端口，Linux/Mac直接使用终端即可。
       </a>
       </p>   
 
@@ -170,13 +170,13 @@ SSH 密钥对生成指南
          <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/"
              target="_blank"
              rel="noopener noreferrer">
-             PuTTY ↗
+             PuTTY
          </a>
          或
          <a href="https://www.netsarang.com/en/free-for-home-school/"
              target="_blank"
              rel="noopener noreferrer">
-             Xshell ↗
+             Xshell
          </a>
          生成公私钥。下面以Xshell软件为例，介绍公私钥生成。</p>
 
@@ -325,7 +325,7 @@ SSH 密钥对生成指南
             <a href="https://www.netsarang.com/en/free-for-home-school/"
                target="_blank"
                rel="noopener noreferrer">
-               Xshell ↗
+               Xshell
             </a>
             登录为例。
          </p>

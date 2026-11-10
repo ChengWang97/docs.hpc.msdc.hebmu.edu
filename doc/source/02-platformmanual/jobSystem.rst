@@ -576,5 +576,5 @@ $sbatch -s job.sh
    <a href="https://hpc.cloud/d/342-eaas"
       target="_blank"
       rel="noopener noreferrer">
-      Slurm作业系统 ↗
+      Slurm作业系统
    </a></p>

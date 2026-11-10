@@ -31,7 +31,7 @@
    <a href="https://space.bilibili.com/676435387/lists?sid=2642446"
       target="_blank"
       rel="noopener noreferrer">
-      B站视频教程 ↗
+      B站视频教程
    </a></p>
 
 
@@ -42,7 +42,7 @@
    <a href="https://meeting.tencent.com/crm/lJRyDRWYdd"
       target="_blank"
       rel="noopener noreferrer">
-      腾讯会议录制 ↗
+      腾讯会议录制
    </a></p>
 
       也可通过抖音搜索"hpc.cloud"观看相关视频教程。
@@ -58,7 +58,7 @@
    <a href="https://msdc.hebmu.edu.cn/a/2025/05/26/EB5F6B86106D4CDBBADE36BAE7BA0E15.html"
       target="_blank"
       rel="noopener noreferrer">
-      扩容申请及成果登记 ↗
+      扩容申请及成果登记
    </a></p>
 
 
@@ -79,7 +79,7 @@
    <a href="https://hpc.cloud/t/qa"
       target="_blank"
       rel="noopener noreferrer">
-      常见问题 ↗
+      常见问题
    </a>
    链接跳转网站后搜索框输入问题即可
    </p>
@@ -92,7 +92,7 @@
    <a href="http://10.20.7.1/home/account"
       target="_blank"
       rel="noopener noreferrer">
-      高性能平台登录跳转入口 ↗
+      高性能平台登录跳转入口
    </a>
    登录零信任访问高性能平台查看相关视频教程，如下图示例：
    </p>
@@ -113,28 +113,23 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 快速上手
    :hidden:
 
-   申请资源<01-getQuickstart/resourcebuild>
-   提交集群作业<01-getQuickstart/submitjobs>
-   工作台<01-getQuickstart/dashboard>
-   资源池<01-getQuickstart/pool>
-   about
+   快速上手 <01-getQuickstart/index>
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: 平台手册
+   :caption: 平台功能
    :hidden:
    
-   用户手册<02-platformmanual/userManual>
-   文件传输<02-platformmanual/fileTransfer>
+   文件传输<02-platformmanual/fileTransferv2>
    用户实例<02-platformmanual/userInstance>
    集群登录<02-platformmanual/clusterLogin>
    作业系统<02-platformmanual/jobSystem>
    项目共享<02-platformmanual/projectSharing>
    计费统计<02-platformmanual/billingStatistics>
-
+   windows远程<02-platformmanual/remoteDesktop>
 
 .. toctree::
    :maxdepth: 2
@@ -158,14 +153,9 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 常见问题:
    :hidden:
 
-   moe<05-faq/moe>
-
-.. 
-   常见问题解答<05-faq/faq>
-
+   常见问题 <05-faq/faq-index>
 
 
 
@@ -174,37 +164,9 @@
    :hidden:
 
    软件 <06-app/index>
-   
-.. 
-   软件模块使用方法<06-app/module>    
-
-   编译器、MPI库、数学库、应用工具<06-app/ByqMpi/index>   
-
-   基准测试<06-app/jzcs/index>        
-
-   AI计算<06-app/ai/index>            
-
-   智能药物平台<06-app/znywpt/index>   
-
-   生物信息平台<06-app/swxxpt/index>   
 
 
-.. 
-   软件模块使用方法<06-app/module>    
-   .. ↑module
-   编译器、MPI库、数学库、应用工具<06-app/ByqMpi/index>   
-   .. ↑compilers_and_languages
-   基准测试<06-app/jzcs/index>        
-   .. ↑benchtools
-   AI计算<06-app/ai/index>            
-   .. ↑ai
-   智能药物平台<06-app/znywpt/index>   
-   .. ↑engineeringscience
-   生物信息平台<06-app/swxxpt/index>   
-   .. ↑bioinformatics
-
-..
-   索引和目录
+.. 索引和目录
    ================
 
    * :ref:`genindex`
@@ -213,5 +175,4 @@
 
 
 
-.. Trigger CI build - do not remove
 .. Trigger CI build - do not remove
