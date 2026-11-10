@@ -22,7 +22,7 @@ Spack应用介绍
    <a href="https://spack.readthedocs.io/en/latest/index.html"
       target="_blank"
       rel="noopener noreferrer">
-      Spack ↗
+      Spack
    </a>
    是专为大型超级计算中心设计的自动化包管理器，支持各种平台和环境中的多个版本和软件配置。
    </p>
@@ -207,7 +207,7 @@ spack info name
    <a href="https://spack.readthedocs.io/en/latest/"
       target="_blank"
       rel="noopener noreferrer">
-      https://spack.readthedocs.io/en/latest/↗
+      https://spack.readthedocs.io/en/latest/
    </a>
    </p>
 
@@ -218,6 +218,6 @@ spack info name
    <a href="https://hpc.pku.edu.cn/_book/guide/soft_env/spack.html"
       target="_blank"
       rel="noopener noreferrer">
-      https://hpc.pku.edu.cn/_book/guide/soft_env/spack.html↗
+      https://hpc.pku.edu.cn/_book/guide/soft_env/spack.html
    </a>
    </p>

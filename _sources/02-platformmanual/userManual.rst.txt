@@ -1,3 +1,5 @@
+:orphan:
+
 =============
 用户注册登录
 =============
@@ -13,34 +15,24 @@
 
 .. raw:: html
 
-   <p>0.【直属医院职工及规培学生必看】河北医科大学统一身份认证账号查询方法</p>
+   <p>直属医院职工申请</p>
 
    <p><a href="https://msdc.hebmu.edu.cn/a/2025/11/17/39FCF7DF16474DF191B8AFA47F86E0B5.html"
       target="_blank"
       rel="noopener noreferrer">
-      直属医院职工及规培学生 ↗
+      直属医院职工申请
    </a></p>
 
 .. raw:: html
 
-   <p>1、【有统一身份认证账号】河北医科大学医学科研数据中心高性能计算平台申请及登录流程</p>
+   <p>校内师生申请</p>
 
    <p><a href="https://msdc.hebmu.edu.cn/a/2024/11/27/8EC67240711D475ABFF4A2AE5B79CC6E.html"
       target="_blank"
       rel="noopener noreferrer">
-      有统一身份认证账号 ↗
+      校内教职工&研究生申请
    </a></p>
 
-.. raw:: html
-
-   <p>2、【无统一身份认证账号】河北医科大学医学科研数据中心高性能计算平台申请及登录流程</p>
-
- <p>
-   <a href="https://msdc.hebmu.edu.cn/a/2025/12/24/4664C46E4E7943BB87D9C19E8E92B0E0.html"
-      target="_blank"
-      rel="noopener noreferrer">
-      无统一身份认证账号 ↗
-   </a></p>
 
 .. warning::
     申请用户请务必填写真实有效的个人信息，特别是联系电话和邮箱地址，以免影响管理员审批及后续平台使用中的通知发送。
@@ -137,7 +129,7 @@
    <p><a href="https://msdc.hebmu.edu.cn/a/2025/05/26/EB5F6B86106D4CDBBADE36BAE7BA0E15.html"
       target="_blank"
       rel="noopener noreferrer">
-      扩容申请及成果登记 ↗
+      扩容申请及成果登记
    </a></p>
 
 

@@ -101,7 +101,7 @@ Ubuntu使用指南
    <a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/"
       target="_blank"
       rel="noopener noreferrer">
-      清华大学开源软件镜像站↗
+      清华大学开源软件镜像站
    </a>
    的说明。
    </p>

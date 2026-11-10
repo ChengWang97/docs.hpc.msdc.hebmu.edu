@@ -16,7 +16,7 @@ Conda
    <a href="https://www.anaconda.com/"
       target="_blank"
       rel="noopener noreferrer">
-      Anaconda ↗
+      Anaconda
    </a>
    是一个用于科学计算的Python发行版，支持Linux、Mac、 Windows系统以及Python、R等科学计算语言，提供了包（Package）管理与环境（Environment）管理的功能，可以很方便地解决多版本多环境并存的问题。用户可以为某项具体的任务创建单独的环境，环境之间相互隔离。这样可以避免同一环境中各类软件相互冲突的问题。Anaconda利用 :cmd: `conda` 命令来进行包和环境的管理，并且已经包含了Python和相关的配套工具。
    </p>
@@ -44,7 +44,7 @@ Conda使用指南
    <a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/"
       target="_blank"
       rel="noopener noreferrer">
-      清华大学开源软件镜像站 ↗
+      清华大学开源软件镜像站
    </a>
    的说明。
    </p>

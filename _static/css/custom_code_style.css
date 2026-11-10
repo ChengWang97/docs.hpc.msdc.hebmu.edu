@@ -1,62 +1,43 @@
 /* =============== 代码块样式总配置 =============== */
-/* 1. 强制覆盖所有层级背景色（消除白色背景） */
-div.highlight,
-div.highlight > div,
-div.highlight table,
-div.highlight table > tbody,
-div.highlight table > tbody > tr,
-div.highlight table > tbody > tr > td,
-div.highlight pre,
-div.highlight .linenodiv,
-div.highlight .linenos,
-div.highlight pre > div,
-div.highlight pre > span,
-div.highlight pre > code {
-    background-color: #111111 !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-image: none !important;
-    color: #ffffff !important;
-}
+/* 使用 sphinx_immaterial 主题 CSS 变量，自动适配明暗模式 */
+/* 不再强制覆盖背景色/字色，让 Pygments 语法高亮正常生效 */
 
-/* 2. 代码块基础样式 */
+/* 1. 代码块基础样式（圆角+阴影+留白） */
 div.highlight {
     position: relative;
-    border-radius: 8px !important;
+    border-radius: 8px;
     overflow: auto;
-    margin: 1em 0 !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    margin: 1em 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* 3. 表格布局重置（核心：统一行号/代码列的布局） */
+/* 2. 表格布局重置（统一行号/代码列的布局） */
 div.highlight table {
-    width: 100% !important;
-    border-collapse: collapse !important;
-    table-layout: fixed !important;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 div.highlight tr {
-    height: auto !important;
+    height: auto;
 }
 
-/* 4. 行号列样式（固定宽度+分割线+对齐） */
+/* 3. 行号列样式（固定宽度+分割线+对齐） */
 div.highlight td.linenos {
-    vertical-align: top !important;    /* 顶部对齐 */
-    width: 50px !important;            /* 加宽行号列，避免挤压分割线 */
-    padding: 16px 0 !important;        /* 上下内边距与代码区一致 */
-    position: relative;                /* 分割线定位基础 */
+    vertical-align: top;             /* 顶部对齐 */
+    width: 50px;                     /* 加宽行号列，避免挤压分割线 */
+    padding: 16px 0;                 /* 上下内边距与代码区一致 */
+    position: relative;              /* 分割线定位基础 */
 }
 
 /* 行号文本样式（与代码完全对齐） */
 div.highlight td.linenos .linenodiv {
-    color: #ffffff !important;
-    text-align: right !important;
-    padding-right: 10px !important;    /* 行号与分割线的间距 */
-    user-select: none !important;
-    font-size: 0.92em !important;      /* 与代码字体大小一致 */
-    line-height: 1.5 !important;       /* 与代码行高一致 */
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; /* 字体统一 */
+    text-align: right;
+    padding-right: 10px;            /* 行号与分割线的间距 */
+    user-select: none;
+    font-size: 0.92em;              /* 与代码字体大小一致 */
+    line-height: 1.5;               /* 与代码行高一致 */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 /* 分割线（精准定位，不被覆盖） */
@@ -65,43 +46,37 @@ div.highlight td.linenos::after {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100% !important;           /* 高度100%，贯穿整列 */
-    width: 1px !important;
-    background-color: #fffefe !important; /* 白色分割线 */
-    z-index: 999 !important;           /* 最高层级，确保显示 */
+    height: 100%;                    /* 高度100%，贯穿整列 */
+    width: 1px;
+    background-color: var(--md-default-fg-color--lightest, rgba(0,0,0,0.12));
 }
 
-/* 5. 代码列样式（与行号完全对齐） */
+/* 4. 代码列样式（与行号完全对齐） */
 div.highlight td.code {
-    vertical-align: top !important;    /* 顶部对齐 */
-    width: calc(100% - 50px) !important; /* 适配行号列宽度 */
-    padding: 16px 0 !important;        /* 上下内边距与行号列一致 */
+    vertical-align: top;             /* 顶部对齐 */
+    width: calc(100% - 50px);       /* 适配行号列宽度 */
+    padding: 16px 0;                 /* 上下内边距与行号列一致 */
 }
 
 /* 代码文本样式 */
 div.highlight td.code pre {
-    color: #ffffff !important;
-    padding-left: 15px !important;     /* 代码与分割线的间距 */
-    padding-right: 16px !important;    /* 右侧内边距 */
+    padding-left: 15px;             /* 代码与分割线的间距 */
+    padding-right: 16px;            /* 右侧内边距 */
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 0.92em !important;
-    line-height: 1.5 !important;
+    font-size: 0.92em;
+    line-height: 1.5;
 }
 
-/* 6. 复制按钮样式 */
+/* 5. 复制按钮样式 */
 div.highlight button.copybtn {
-    color: #ffffff !important;
-    background-color: #333333 !important;
-    border: 1px solid #666666 !important;
-    border-radius: 4px !important;
-    padding: 4px 8px !important;
-    right: 10px !important;
-    top: 10px !important;
+    border-radius: 4px;
+    padding: 4px 8px;
+    right: 10px;
+    top: 10px;
     opacity: 0.8;
-    z-index: 9999 !important;
+    z-index: 9999;
 }
 
 div.highlight button.copybtn:hover {
     opacity: 1;
-    background-color: #444444 !important;
 }

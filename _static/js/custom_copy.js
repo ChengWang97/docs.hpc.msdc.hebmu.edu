@@ -1,37 +1,20 @@
-// _static/js/copy-button-text.js
+// _static/js/custom_copy.js
+// Sphinx 产出的是静态 HTML，无需 MutationObserver 监听动态变化
 
 document.addEventListener("DOMContentLoaded", function () {
-    // 定期检查新出现的 .highlight 块
-    const observer = new MutationObserver(() => {
-        addCopyButtonLabels();
-    });
+    document.querySelectorAll('.highlight .copybtn').forEach(function (btn) {
+        if (btn.dataset.initialized) return;
+        btn.dataset.initialized = 'true';
+        btn.textContent = 'copy';
 
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-
-    // 初始化一次
-    addCopyButtonLabels();
-
-    function addCopyButtonLabels() {
-        // 查找所有 .copybtn 按钮
-        const buttons = document.querySelectorAll('.highlight .copybtn');
-        buttons.forEach(btn => {
-            if (!btn.dataset.initialized) {
-                btn.textContent = 'copy';  // 初始文本
-                btn.dataset.initialized = 'true';
-
-                btn.addEventListener('click', function () {
-                    this.disabled = true;
-                    this.textContent = 'Copied!';
-                    setTimeout(() => {
-                        this.disabled = false;
-                        this.textContent = 'copy';
-                    }, 2000);
-                });
-            }
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            this.textContent = 'Copied!';
+            var self = this;
+            setTimeout(function () {
+                self.disabled = false;
+                self.textContent = 'copy';
+            }, 2000);
         });
-    }
+    });
 });
-
