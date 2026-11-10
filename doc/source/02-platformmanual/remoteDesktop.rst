@@ -22,23 +22,23 @@ windows虚拟机桌面远程
 
 点击“远程桌面”按钮，打开虚拟机实例后，更改账户设置，添加远程密码
 
-.. figure:: /_static/img/remotedesk/remotedesk-1.png
+.. figure:: /_static/img/remoteDesk/remotedesk-1.png
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
-.. figure:: /_static/img/remotedesk/remotedesk-2.png
+.. figure:: /_static/img/remoteDesk/remotedesk-2.png
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
-.. figure:: /_static/img/remotedesk/remotedesk-3.png
+.. figure:: /_static/img/remoteDesk/remotedesk-3.png
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
    
 
-.. figure:: /_static/img/remotedesk/remotedesk-4.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-4.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
@@ -50,20 +50,20 @@ windows虚拟机桌面远程
 
 1) 返回高性能平台“我的资源”界面，选择windows虚拟机，点击虚拟机名称进入虚拟机详情页，增加一个自定义的远程服务
 
-.. figure:: /_static/img/remotedesk/remotedesk-5.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-5.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
 
-.. figure:: /_static/img/remotedesk/remotedesk-6.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-6.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
 2) 创建完成自定义服务后，点击远程服务，将服务外部地址一栏中IP及端口复制下来
 
-.. figure:: /_static/img/remotedesk/remotedesk-7.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-7.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
@@ -76,22 +76,22 @@ windows虚拟机桌面远程
 1) 返回windows电脑桌面，同时按住键盘的 “win键” 和“R键”，将运行窗口调出后，输入 :cmd:`mstsc`，回车确认后将拷贝的地址输入到远程窗口栏中点击连接
 
 
-.. figure:: /_static/img/remotedesk/remotedesk-8.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-8.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
-.. figure:: /_static/img/remotedesk/remotedesk-9.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-9.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
-.. figure:: /_static/img/remotedesk/remotedesk-10.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-10.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
 
-.. figure:: /_static/img/remotedesk/remotedesk-11.png 
+.. figure:: /_static/img/remoteDesk/remotedesk-11.png 
    :alt: win虚拟机密码重置页面
    :width: 75%
    :class: zoomable
